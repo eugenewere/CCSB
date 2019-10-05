@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e20217f8-796e-4e97-a81f-b6229a83ba72" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ccsbdb.sqlite3" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ccsbdb.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ccsbdb.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ccsbadmin/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ccsbadmin/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="230" column="47" selection-start-line="230" selection-start-column="47" selection-end-line="230" selection-end-column="47" />
+              <caret line="231" column="39" selection-start-line="231" selection-start-column="39" selection-end-line="231" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/blog/singleblog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="116" column="42" lean-forward="true" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+              <folding>
+                <element signature="e#1145#1152#1#HTML" expanded="true" />
+                <element signature="e#1449#1472#0#HTML" expanded="true" />
+                <element signature="e#1544#1625#0#HTML" expanded="true" />
+                <element signature="e#1879#1987#0#HTML" expanded="true" />
+                <element signature="e#2040#2115#0#HTML" expanded="true" />
+                <element signature="e#1479#1502#0#HTML" expanded="true" />
+                <element signature="e#2038#2061#0#HTML" expanded="true" />
+                <element signature="e#2133#2154#0#HTML" expanded="true" />
+                <element signature="e#3829#3836#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/blog/blog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-128">
+              <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
+              <folding>
+                <element signature="e#704#4302#0#HTML" />
+                <element signature="e#1127#1134#1#HTML" expanded="true" />
+                <element signature="e#1449#1472#0#HTML" expanded="true" />
+                <element signature="e#1544#1625#0#HTML" expanded="true" />
+                <element signature="e#1849#1957#0#HTML" expanded="true" />
+                <element signature="e#2010#2085#0#HTML" expanded="true" />
+                <element signature="e#2450#2473#0#HTML" expanded="true" />
+                <element signature="e#3083#3106#0#HTML" expanded="true" />
+                <element signature="e#3178#3199#0#HTML" expanded="true" />
+                <element signature="e#4856#4863#1#HTML" expanded="true" />
+                <element signature="e#5178#5201#0#HTML" expanded="true" />
+                <element signature="e#5273#5354#0#HTML" expanded="true" />
+                <element signature="e#5578#5686#0#HTML" expanded="true" />
+                <element signature="e#5739#5814#0#HTML" expanded="true" />
+                <element signature="e#6179#6202#0#HTML" expanded="true" />
+                <element signature="e#6812#6835#0#HTML" expanded="true" />
+                <element signature="e#6907#6928#0#HTML" expanded="true" />
+                <element signature="e#8627#8634#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ccsbadmin/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ANIMSITION</find>
+      <find>index</find>
+      <find>over</find>
+      <find>ani</find>
+      <find>animsition</find>
+      <find>aler</find>
+      <find>carousels</find>
+      <find>carousel</find>
+      <find>objective</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>objective</replace>
+      <replace>experts</replace>
+      <replace>blogs</replace>
+      <replace>blog</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ccsbviewers/admin.py" />
+        <option value="$PROJECT_DIR$/ccsbadmin/admin.py" />
+        <option value="$PROJECT_DIR$/ccsb_django_project/urls.py" />
+        <option value="$PROJECT_DIR$/ccsb_django_project/settings.py" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/index.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/aahome/index.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/modal.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/aahome/panelize.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/objectives/ojectives.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/objectives/viewobjective.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/aahome/alerts.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/carousels/carousel.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/team/viewteam.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/static/js/main.js" />
+        <option value="$PROJECT_DIR$/ccsbadmin/forms.py" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/aahome/aalayout.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/models.py" />
+        <option value="$PROJECT_DIR$/ccsbadmin/urls.py" />
+        <option value="$PROJECT_DIR$/ccsbadmin/views.py" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/blog/blog.html" />
+        <option value="$PROJECT_DIR$/ccsbadmin/templates/blog/singleblog.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="24" />
+    <option name="width" value="1382" />
+    <option name="height" value="752" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="ccsbadmin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="ccsbadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="ccsbadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="aahome" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="ccsbadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="ccsbadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="objectives" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="ccsbadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="team" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccsb_django_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccsb_django_project" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="home_couresel" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccsbadmin/static/images" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static\images" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\aahome" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\deleteafter" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ccsb_django_project" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ccsb_django_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e20217f8-796e-4e97-a81f-b6229a83ba72" name="Default Changelist" comment="" />
+      <created>1570207462319</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570207462319</updated>
+      <workItem from="1570207465114" duration="4325000" />
+      <workItem from="1570212124729" duration="46211000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="50536000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="24" width="1382" height="752" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14350453" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" weight="0.32852563" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32852563" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4775641" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.13821752" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14350453" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32852563" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32852563" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.4775641" />
+      <window_info anchor="bottom" id="Python Console" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.13821752" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbviewers/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbviewers/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbviewers/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/typo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9099" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsb_django_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsb_django_project/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="e#649#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/static/vendor/animsition/animsition.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="974" column="51" selection-start-line="974" selection-start-column="51" selection-end-line="974" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/static/vendor/jquery-ui.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="8" column="1125" selection-start-line="8" selection-start-column="1125" selection-end-line="8" selection-end-column="1125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/static/vendor/lightbox2/dist/js/lightbox-plus-jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="36" column="225" selection-start-line="36" selection-start-column="220" selection-end-line="36" selection-end-column="225" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="1109" column="18" lean-forward="true" selection-start-line="440" selection-start-column="12" selection-end-line="1109" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/aahome/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="541" column="140" selection-start-line="541" selection-start-column="51" selection-end-line="541" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="563" column="36" lean-forward="true" selection-start-line="538" selection-start-column="12" selection-end-line="563" selection-end-column="36" />
+          <folding>
+            <element signature="e#18530#18537#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/536fc770-d244-4718-919b-c8d3498594a4/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="795" column="34" lean-forward="true" selection-start-line="785" selection-start-column="28" selection-end-line="795" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://536fc770-d244-4718-919b-c8d3498594a4/schema/main/table/ccsbadmin_carousel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7b74acb4-b53d-4235-8834-f05ac224f145">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/static/vendor/animsition/animsition.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://536fc770-d244-4718-919b-c8d3498594a4/schema/main/table/ccsbadmin_objective">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7b74acb4-b53d-4235-8834-f05ac224f145">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/aahome/alerts.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/static/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="308" column="1" selection-start-line="308" selection-start-column="1" selection-end-line="308" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/deleteafter/CoolAdmin-master/index4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="220" column="54" selection-start-line="220" selection-start-column="38" selection-end-line="220" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/carousels/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="176" lean-forward="true" selection-start-line="162" selection-start-column="36" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://536fc770-d244-4718-919b-c8d3498594a4/schema/main/table/ccsbadmin_expert">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7b74acb4-b53d-4235-8834-f05ac224f145">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://536fc770-d244-4718-919b-c8d3498594a4/schema/main/table/ccsbadmin_comment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7b74acb4-b53d-4235-8834-f05ac224f145">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="1263" column="110" selection-start-line="1263" selection-start-column="110" selection-end-line="1263" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/team/viewteam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-923">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/aahome/panelize.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="28" lean-forward="true" selection-end-line="367" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/aahome/aalayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="399" column="28" selection-start-line="399" selection-start-column="28" selection-end-line="399" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/objectives/viewobjective.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="147" column="42" selection-end-line="174" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/objectives/ojectives.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="172" column="123" lean-forward="true" selection-start-line="172" selection-start-column="68" selection-end-line="172" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="230" column="47" selection-start-line="230" selection-start-column="47" selection-end-line="230" selection-end-column="47" />
+          <caret line="231" column="39" selection-start-line="231" selection-start-column="39" selection-end-line="231" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/blog/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
+          <folding>
+            <element signature="e#704#4302#0#HTML" />
+            <element signature="e#1127#1134#1#HTML" expanded="true" />
+            <element signature="e#1449#1472#0#HTML" expanded="true" />
+            <element signature="e#1544#1625#0#HTML" expanded="true" />
+            <element signature="e#1849#1957#0#HTML" expanded="true" />
+            <element signature="e#2010#2085#0#HTML" expanded="true" />
+            <element signature="e#2450#2473#0#HTML" expanded="true" />
+            <element signature="e#3083#3106#0#HTML" expanded="true" />
+            <element signature="e#3178#3199#0#HTML" expanded="true" />
+            <element signature="e#4856#4863#1#HTML" expanded="true" />
+            <element signature="e#5178#5201#0#HTML" expanded="true" />
+            <element signature="e#5273#5354#0#HTML" expanded="true" />
+            <element signature="e#5578#5686#0#HTML" expanded="true" />
+            <element signature="e#5739#5814#0#HTML" expanded="true" />
+            <element signature="e#6179#6202#0#HTML" expanded="true" />
+            <element signature="e#6812#6835#0#HTML" expanded="true" />
+            <element signature="e#6907#6928#0#HTML" expanded="true" />
+            <element signature="e#8627#8634#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ccsbadmin/templates/blog/singleblog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="116" column="42" lean-forward="true" selection-start-line="116" selection-start-column="42" selection-end-line="116" selection-end-column="42" />
+          <folding>
+            <element signature="e#1145#1152#1#HTML" expanded="true" />
+            <element signature="e#1449#1472#0#HTML" expanded="true" />
+            <element signature="e#1544#1625#0#HTML" expanded="true" />
+            <element signature="e#1879#1987#0#HTML" expanded="true" />
+            <element signature="e#2040#2115#0#HTML" expanded="true" />
+            <element signature="e#1479#1502#0#HTML" expanded="true" />
+            <element signature="e#2038#2061#0#HTML" expanded="true" />
+            <element signature="e#2133#2154#0#HTML" expanded="true" />
+            <element signature="e#3829#3836#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
