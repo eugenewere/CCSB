@@ -26,6 +26,18 @@ class BlogForm(forms.ModelForm):
         fields = ['blog_title','blog_image','blog_description']
 
 
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['events_image' ]
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['email','address','phone_number' ]
+
+
 
 
 

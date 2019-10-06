@@ -1,4 +1,7 @@
+import json
+
 from django.contrib import messages
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import *
 
@@ -235,11 +238,262 @@ def updateBlog(request, blog_id):
 
 
 
+def viewEvents(request):
+    events = Event.objects.order_by('-created_at')
+    context = {
+        'title': 'Events',
+        'events': events,
+
+    }
+    return render(request, 'event/events.html',context)
 
 
 
 
 
+def viewCalendar(request):
+    events = Event.objects.order_by('-created_at')
+    all_events = Event.objects.all()
+    get_event_types = Event.objects.only('events_title')
+
+    # if filters applied then get parameter and filter based on condition else return object
+    if request.GET:
+        event_arr = []
+        if request.GET.get('events_title') == "all":
+            all_events = EventForm.objects.all()
+        else:
+            all_events = EventForm.objects.filter(events_title__icontains=request.GET.get('events_title'))
+
+        for i in all_events:
+            event_sub_arr = {}
+            event_sub_arr['events_title'] = i.event_name
+            start_time = datetime.datetime.strptime(str(i.start_time.date()), "%Y-%m-%d").strftime("%Y-%m-%d")
+            end_time = datetime.datetime.strptime(str(i.end_time.date()), "%Y-%m-%d").strftime("%Y-%m-%d")
+            event_sub_arr['event_date'] = start_time
+            event_sub_arr['event_end_date'] = end_time
+            event_arr.append(event_sub_arr)
+        return HttpResponse(json.dumps(event_arr))
+
+    context = {
+        'title': 'EventsCalendar',
+        'events': events,
+
+    }
+    return render(request, 'event/calendar.html',context)
+def homeCalendar(request):
+    all_events = Event.objects.all()
+    context = {
+        "events":all_events,
+    }
+    return render(request, 'event/calendar.html', context)
+
+def addCalendarEvent(request):
+    if request.method == 'POST':
+        event_date = request.POST['event_date']
+
+        event_title = request.POST['events_title']
+        event_end_date = request.POST['event_end_date']
+        event_description = request.POST['events_description']
+        evnt = Event.objects.create(
+            event_date=event_date,
+
+            events_title=event_title,
+            event_end_date=event_end_date,
+            events_description=event_description,
+        )
+        data = {}
+        return JsonResponse(data)
+    return redirect('TheAdmin:view-calenda')
 
 
+def addEvents(request):
+    if request.method == 'POST':
+        event_date=request.POST['event_date']
+        event_image=request.FILES['events_image']
+        event_title=request.POST['events_title']
+        event_end_date = request.POST['event_end_date']
+        event_description=request.POST['events_description']
+        evnt= Event.objects.create(
+            event_date=event_date,
+            events_image=event_image,
+            events_title=event_title,
+            event_end_date=event_end_date,
+            events_description=event_description,
+        )
+        if evnt.id is not None:
+            messages.success(request, 'Event Added Successfuly')
+        else:
+            messages.error(request, 'Event Not Added')
+            return redirect('CCSBADMIN:viewEvents')
+    return redirect('CCSBADMIN:viewEvents')
 
+def editEvents(request, event_id):
+    event = Event.objects.filter(id=event_id).first()
+    if request.method == 'POST':
+        event_date=request.POST['event_date']
+        event_title=request.POST['events_title']
+        event_end_date=request.POST['event_end_date']
+        event_description=request.POST['events_description']
+
+        Event.objects.filter(id=event.id).update(
+            event_date=event_date,
+            event_end_date=event_end_date,
+            events_title=event_title,
+            events_description=event_description,
+        )
+
+        form = EventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+
+            form.save()
+            messages.success(request, 'Event Updated Successfuly')
+        else:
+            messages.error(request, 'Event Not Updated')
+            return redirect('CCSBADMIN:viewEvents')
+
+    return redirect('CCSBADMIN:viewEvents')
+
+
+def deleteEvents(request, event_id):
+    event = Event.objects.filter(id=event_id).first()
+    if event is not None:
+        event.delete()
+        messages.success(request, 'Event Deleted Successfuly')
+        return redirect('CCSBADMIN:viewEvents')
+    else:
+        messages.error(request, 'Event Not Deleted')
+        return redirect('CCSBADMIN:viewEvents')
+
+def viewSingleEvents(request, event_id):
+    event = Event.objects.filter(id=event_id).first()
+
+    context = {
+        'title':event.events_title,
+        'event':event,
+    }
+    return render(request, 'event/singleevent.html',context)
+
+
+def viewProjects(request):
+    projects = Project.objects.order_by("-created_at")
+
+    context = {
+        'title': "Project",
+        'projects': projects,
+    }
+    return render(request, 'projects/project.html', context)
+
+
+def addProjects(request):
+    if request.method == 'POST':
+        date=request.POST['date']
+        project_image=request.FILES['project_image']
+        project_title=request.POST['project_title']
+        project_description=request.POST['project_description']
+        prjt= Project.objects.create(
+            project_description=project_description,
+            date=date,
+            project_title=project_title,
+            project_image=project_image,
+        )
+        if prjt.id is not None:
+            messages.success(request, 'Project Added Successfuly')
+        else:
+            messages.error(request, 'Project Not Added')
+            return redirect('CCSBADMIN:viewProjects')
+    return redirect('CCSBADMIN:viewProjects')
+
+
+def editProjects(request, project_id):
+    project = Project.objects.filter(id=project_id).first()
+    if request.method == 'POST':
+        date = request.POST['date']
+        project_image = request.FILES['project_image']
+        project_title = request.POST['project_title']
+        project_description = request.POST['project_description']
+        Project.objects.filter(id=int(project.id)).create(
+            project_description=project_description,
+            date=date,
+            project_title=project_title,
+            project_image=project_image,
+        )
+        messages.success(request, 'Project Updated Successfuly')
+    return redirect('CCSBADMIN:viewProjects')
+
+
+def deleteProjects(request, project_id):
+    project = Project.objects.filter(id=project_id).first()
+    if project is not None:
+        project.delete()
+        messages.success(request, 'Project Deleted Successfuly')
+        return redirect('CCSBADMIN:viewProjects')
+    else:
+        messages.error(request, 'Project Not Deleted')
+        return redirect('CCSBADMIN:viewProjects')
+
+
+def viewSingleProjects(request, project_id):
+    project = Project.objects.filter(id=project_id).first()
+    context = {
+        'title': project.project_title,
+        'project': project,
+    }
+    return render(request,'projects/singleproject.html', context)
+
+
+def viewContact(request):
+    contacts = Contact.objects.order_by("created_at")
+    context = {
+        'title': 'Contacts',
+        'contacts': contacts,
+    }
+    return render(request, 'contact/contact.html', context)
+
+
+def addContact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        print(form)
+        if form.is_valid():
+            # print(form)
+            form.save()
+            messages.success(request, 'Contact Added Successfuly')
+        else:
+            messages.error(request, 'Contact Not Added')
+            return redirect('CCSBADMIN:viewContact')
+    return redirect('CCSBADMIN:viewContact')
+
+
+def deleteContact(request, contact_id):
+    contact = Contact.objects.filter(id=contact_id).first()
+    if contact is not None:
+        contact.delete()
+        messages.success(request, 'Contact Deleted Successfuly')
+        return redirect('CCSBADMIN:viewContact')
+    else:
+        messages.error(request, 'Contact Not Deleted')
+        return redirect('CCSBADMIN:viewContact')
+
+
+def editContact(request, contact_id):
+    contact = Contact.objects.filter(id=contact_id).first()
+    if request.method == 'POST':
+        form = ContactForm(request.POST, instance=contact)
+        print(form)
+        if form.is_valid():
+            # print(form)
+            form.save()
+            messages.success(request, 'Contact Updated Successfuly')
+        else:
+            messages.error(request, 'Contact Not Updated')
+            return redirect('CCSBADMIN:viewContact')
+    return redirect('CCSBADMIN:viewContact')
+
+
+def aboutUs(request):
+    aboutuss = AboutUs.objects.order_by("created_at")
+    context = {
+        'title': 'Contacts',
+        'aboutuss': aboutuss,
+    }
+    return render(request, 'aboutus/aboutus.html', context)

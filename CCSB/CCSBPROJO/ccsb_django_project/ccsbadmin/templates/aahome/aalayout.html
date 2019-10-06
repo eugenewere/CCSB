@@ -10,10 +10,7 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
-    <!-- Title Page-->
-    <title>
-       {% block title %}{% endblock title %}
-    </title>
+
     <!-- Fontfaces CSS-->
     <link href="{% static 'css/font-face.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
@@ -31,7 +28,10 @@
     <link href="{% static 'vendor/slick/slick.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
-
+<!-- Title Page-->
+    <title class="text-capitalize">
+       {% block title %}{% endblock title %}
+    </title>
     <!-- Main CSS-->
     <link href="{% static 'css/theme.css' %}" rel="stylesheet" media="all">
     {% block links %}{% endblock links %}
@@ -185,7 +185,7 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="{% url 'CCSBADMIN:viewEvents' %}">
                                 <i class="fas fa-calendar-alt"></i>Events</a>
                         </li>
                         <li>
@@ -193,7 +193,7 @@
                                 <i class="fas fa-map-marker-alt"></i>Newsletters </a>
                         </li>
                         <li>
-                            <a href="map.html">
+                            <a href="{% url 'CCSBADMIN:viewProjects' %}">
                                 <i class="fas fa-tasks"></i>Projects </a>
                         </li>
 
@@ -202,7 +202,7 @@
                                 <i class="fas fa-desktop"></i>Settings</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="button.html">Contacts</a>
+                                    <a href="{% url 'CCSBADMIN:viewContact' %}">Contacts</a>
                                 </li>
                                 <li>
                                     <a href="badge.html">Social Media</a>

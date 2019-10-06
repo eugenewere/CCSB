@@ -54,6 +54,7 @@ class Event(models.Model):
     events_title = models.CharField(max_length=150, null=False, blank=False)
     events_description = models.TextField()
     event_date = models.DateTimeField(default=datetime.datetime.now())
+    event_end_date = models.DateTimeField(default=datetime.datetime.now())
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

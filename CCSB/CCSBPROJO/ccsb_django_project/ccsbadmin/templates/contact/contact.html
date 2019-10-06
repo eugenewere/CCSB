@@ -1,0 +1,241 @@
+{% extends "aahome/aalayout.html" %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+    {% block links %}
+        <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css">
+        <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    {% endblock links %}
+{% block content %}
+
+             <!-- adding contact modal large -->
+			<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="largeModalLabel">Home contact</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+                            <form action="{% url 'CCSBADMIN:addContact' %}" method="POST" enctype="multipart/form-data">
+                               {% csrf_token %}
+                                <div class="modal-body">
+                                    
+                                    <div class="row" style="padding: 20px; ">
+                                        <div class="form-group w-100">
+                                            <label for="exampleInputEmail1">Email</label>
+                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                                            <small id="emailHelp" class="form-text text-muted">abc@example.com</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding: 20px; ">
+                                        <div class="form-group w-100">
+                                            <label for="exampleInputEmail1">PhoneNumber</label>
+                                            <input type="number" name="phone_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter PhoneNumber">
+                                            <small id="emailHelp" class="form-text text-muted">07********</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding: 20px; ">
+                                        <div class="form-group w-100">
+                                            <label for="exampleInputEmail1">Address</label>
+                                            <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                                            <small id="emailHelp" class="form-text text-muted text-capitalize">eg kimathi street 222</small>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Confirm</button>
+                                </div>
+                            </form>
+					</div>
+				</div>
+			</div>
+			<!-- end modal large -->
+
+         {% for contact in contacts %}
+            <!-- updating contact modal large -->
+			<div class="modal fade" id="ee{{ contact.id }}" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg " role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="largeModalLabel">Update Home contact</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+                            <form action="{% url 'CCSBADMIN:editContact' contact.id %}" method="POST" enctype="multipart/form-data">
+                               {% csrf_token %}
+                                <div class="modal-body">
+
+                                    <div class="row" style="padding: 20px; ">
+                                        <div class="form-group w-100">
+                                            <label for="exampleInputEmail1">Email</label>
+                                            <input value="{{ contact.email }}" type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                                            <small id="emailHelp" class="form-text text-muted">abc@example.com</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding: 20px; ">
+                                        <div class="form-group w-100">
+                                            <label for="exampleInputEmail1">PhoneNumber</label>
+                                            <input value="{{ contact.phone_number }}"  type="number" name="phone_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter PhoneNumber">
+                                            <small id="emailHelp" class="form-text text-muted">07********</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding: 20px; ">
+                                        <div class="form-group w-100">
+                                            <label for="exampleInputEmail1">Address</label>
+                                            <input value="{{ contact.address }}" type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+                                            <small id="emailHelp" class="form-text text-muted text-capitalize">eg kimathi street 222</small>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Confirm</button>
+                                </div>
+                            </form>
+					</div>
+				</div>
+			</div>
+			<!-- end modal large -->
+         {% endfor %}
+
+
+
+
+            {% for contact in contacts %}
+            <!-- delete contact modal large -->
+			<div class="modal fade" id="dd{{ contact.id }}" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="largeModalLabel">Delete contact {{ contact.address }}</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+                        <div class="modal-body">
+                            Are you sure you want to delete the contact! {{ contact.address }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
+                            <a href="{% url 'CCSBADMIN:deleteContact' contact.id %}" class="btn btn-danger"><i class="fa fa-plus"></i> Delete</a>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<!-- end modal large -->
+            {% endfor %}
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">Contacts</h3>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-right">
+                                        {% if not contacts.count > 0 %}
+                                            <button data-toggle="modal" data-target="#largeModal" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                <i class="zmdi zmdi-plus" ></i>add contacts
+                                            </button>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-responsive-data2">
+                                    <table class="table tablez table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>email</th>
+                                                <th>address</th>
+                                                <th>phone number</th>
+                                                <th>settings</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for contact in contacts %}
+                                            <tr class="tr-shadow">
+                                                <td>{{ forloop.counter }}</td>
+
+                                                <td>
+                                                    <span class="block-email">{{contact.email}}</span>
+                                                </td>
+                                                <td class="desc">{{contact.address}}</td>
+                                                <td>{{contact.phone_number}}</td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item" data-toggle="modal" data-target="#ee{{ contact.id }}" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button data-toggle="modal" data-target="#dd{{ contact.id }}" class="item"  data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © <script> var date = new Date(); var yr = date.getFullYear(); document.write(yr);</script> Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock content %}
+{% block scripts %}
+     <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('.blah')
+                        .attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.tablez').DataTable(
+               {#{#}
+               {# "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {#}
+               {#         $('td', nRow).css('background-color', '#323a46');#}
+               {# }#}
+
+          );
+        });
+    </script>
+{% endblock scripts %}

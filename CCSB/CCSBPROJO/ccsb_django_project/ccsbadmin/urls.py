@@ -30,4 +30,26 @@ urlpatterns =[
     path('deleteblog/<int:blog_id>',views.deleteBlog, name='deleteBlog'),
     path('updateblog/<int:blog_id>',views.updateBlog, name='updateBlog'),
 
+    path('viewEvents/', views.viewEvents, name='viewEvents'),
+         path('viewCalendar/', views.viewCalendar, name='viewCalendar'),
+         path('viewhomeCalenda', views.homeCalendar, name='view-calenda'),
+         path('addevent', views.addCalendarEvent, name='add-Event'),
+    path('addEvents/', views.addEvents, name='addEvents'),
+    path('editEvents/<int:event_id>', views.editEvents, name='editEvents'),
+    path('viewSingleEvents/<int:event_id>', views.viewSingleEvents, name='viewSingleEvents'),
+    path('deleteEvents/<int:event_id>', views.deleteEvents, name='deleteEvents'),
+
+    path('viewProjects/', views.viewProjects, name='viewProjects'),
+    path('addProjects/', views.addProjects, name='addProjects'),
+    path('editProjects/<int:project_id>/', views.editProjects, name='editProjects'),
+    path('deleteProjects/<int:project_id>/', views.deleteProjects, name='deleteProjects'),
+    path('viewSingleProjects/<int:project_id>/', views.viewSingleProjects, name='viewSingleProjects'),
+
+    path('contacts/', views.viewContact, name='viewContact'),
+    path('addcontacts/', views.addContact, name='addContact'),
+    path('deletecontacts/<int:contact_id>', views.deleteContact, name='deleteContact'),
+    path('editcontacts/<int:contact_id>', views.editContact, name='editContact'),
+
+    path('aboutUs/',views.aboutUs, name='aboutUs'),
+
 ]
