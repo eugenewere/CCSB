@@ -1,16 +1,21 @@
 import json
 
 from django.contrib import messages
+
+from django.contrib.auth import authenticate, logout, login, get_user_model
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import *
+from django.contrib.auth import login as auth_login
 
 # Create your views here.
 
 def dashboard(request):
 
+    user =request.user
     context ={
-        'title':'Dashboard'
+        'title':'Dashboard',
+        'user': user,
     }
 
     return render(request, 'aahome/index.html', context)
@@ -30,7 +35,7 @@ def addCarousels(request):
         form = CarouselForm(request.POST, request.FILES)
         print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Carousel Added Successfuly')
         else:
@@ -77,7 +82,7 @@ def addObjectives(request):
         form = ObjectiveForm(request.POST)
         print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Objectives  Added Successfuly')
         else:
@@ -139,7 +144,7 @@ def addExpert(request):
         form = ExpertForm(request.POST, request.FILES)
         print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Expert Added Successfuly')
         else:
@@ -164,7 +169,7 @@ def editExpert(request, expert_id):
         form = ExpertForm(request.POST, request.FILES, instance=expert)
         print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Expert Updated Successfuly')
         else:
@@ -193,7 +198,7 @@ def addBlog(request):
         form = BlogForm(request.POST, request.FILES)
         print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Blog Added Successfuly')
         else:
@@ -227,7 +232,7 @@ def updateBlog(request, blog_id):
         form = BlogForm(request.POST, request.FILES, instance=blog)
         print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Blog Updated Successfuly')
         else:
@@ -453,9 +458,9 @@ def viewContact(request):
 def addContact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        print(form)
+        
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Contact Added Successfuly')
         else:
@@ -479,9 +484,8 @@ def editContact(request, contact_id):
     contact = Contact.objects.filter(id=contact_id).first()
     if request.method == 'POST':
         form = ContactForm(request.POST, instance=contact)
-        print(form)
         if form.is_valid():
-            # print(form)
+            #
             form.save()
             messages.success(request, 'Contact Updated Successfuly')
         else:
@@ -493,7 +497,105 @@ def editContact(request, contact_id):
 def aboutUs(request):
     aboutuss = AboutUs.objects.order_by("created_at")
     context = {
-        'title': 'Contacts',
+        'title': 'About Us',
         'aboutuss': aboutuss,
     }
     return render(request, 'aboutus/aboutus.html', context)
+
+
+def addaboutUs(request):
+    if request.method == 'POST':
+        form = AboutUsForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            #
+            form.save()
+            messages.success(request, 'Your Story Added Successfuly')
+        else:
+            messages.error(request, 'Your Story Not Added')
+            return redirect('CCSBADMIN:aboutUs')
+    return redirect('CCSBADMIN:aboutUs')
+
+
+def deleteaboutUs(request, aboutus_id):
+    aboutus = AboutUs.objects.filter(id=aboutus_id).first()
+    if aboutus is not None:
+        aboutus.delete()
+        messages.success(request, 'Your story Deleted Successfuly')
+        return redirect('CCSBADMIN:aboutUs')
+    else:
+        messages.error(request, 'Your story Not Deleted')
+        return redirect('CCSBADMIN:aboutUs')
+
+
+def editaboutUs(request, aboutus_id):
+    aboutus = AboutUs.objects.filter(id=aboutus_id).first()
+    if request.method == 'POST':
+        form = AboutUsForm(request.POST,request.FILES, instance=aboutus )
+
+        if form.is_valid():
+            #
+            form.save()
+            messages.success(request, 'Your Story Updated Successfuly')
+        else:
+            messages.error(request, 'Your Story Not Updated')
+            return redirect('CCSBADMIN:aboutUs')
+    return redirect('CCSBADMIN:aboutUs')
+
+
+def singleaboutUs(request, aboutus_id):
+    aboutus = AboutUs.objects.filter(id=aboutus_id).first()
+    context = {
+        'title': aboutus.about_title,
+        'aboutus': aboutus,
+    }
+    return render(request, 'aboutus/singleaboutus.html', context)
+
+
+
+
+
+
+def register(request):
+    if request.method == 'POST':
+        form = AdminForm(request.POST, request.FILES)
+        print(form)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registered Successfully Now Log In')
+            return redirect('CCSBADMIN:login')
+        else:
+            form = AdminForm()
+            messages.error(request, 'Registration Error')
+            return render(request, "register/register.html", {'form': form})
+    context = {
+
+    }
+
+    return render(request, 'register/register.html',context)
+
+
+def adminlogin(request):
+    messages = []
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('CCSBADMIN:dashboard')
+            else:
+                messages.append('Your account has been activated!')
+                return render(request, 'register/login.html', {'success': messages})
+        else:
+            messages.append('Invalid login credentials!')
+            return render(request, 'register/login.html', {'errors': messages})
+    return render(request, "register/login.html")
+
+
+def adminlogout(request):
+    logout(request)
+    return redirect('CCSBADMIN:login')

@@ -23,19 +23,30 @@ class ExpertForm(forms.ModelForm):
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
-        fields = ['blog_title','blog_image','blog_description']
+        fields = ['blog_title','blog_image','blog_description',]
 
 
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['events_image' ]
+        fields = ['events_image', ]
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['email','address','phone_number' ]
+        fields = ['email','address','phone_number', ]
+
+class AboutUsForm(forms.ModelForm):
+    class Meta:
+        model = AboutUs
+        fields = ['about_image','about_title','description',]
+
+
+class AdminForm(UserCreationForm):
+    class Meta:
+        model = Admin
+        fields = ['username','first_name', 'last_name','phone_no','email','password1','password2','profile_pic',]
 
 
 

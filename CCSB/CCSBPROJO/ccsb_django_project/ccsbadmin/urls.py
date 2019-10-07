@@ -8,6 +8,10 @@ app_name = 'CCSBADMIN'
 urlpatterns =[
     path('dashboard/', views.dashboard, name='dashboard'),
 
+    path('register/', views.register, name='register'),
+    path('login/', views.adminlogin, name='login'),
+    path('logout/', views.adminlogout, name='logout'),
+
     path('carousels/', views.viewCarousels, name='viewCarousels'),
     path('addcarousels/', views.addCarousels, name='addCarousels'),
     path('deletecarousels/<int:carousel_id>', views.deleteCarousels, name='deleteCarousels'),
@@ -51,5 +55,9 @@ urlpatterns =[
     path('editcontacts/<int:contact_id>', views.editContact, name='editContact'),
 
     path('aboutUs/',views.aboutUs, name='aboutUs'),
+    path('addaboutUs/',views.addaboutUs, name='addaboutUs'),
+    path('deleteaboutUs/<int:aboutus_id>',views.deleteaboutUs, name='deleteaboutUs'),
+    path('editaboutUs/<int:aboutus_id>',views.editaboutUs, name='editaboutUs'),
+    path('singleaboutUs/<int:aboutus_id>',views.singleaboutUs, name='singleaboutUs'),
 
 ]

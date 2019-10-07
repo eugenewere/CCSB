@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load callmethod %}
 <html lang="en">
 
 <head>
@@ -160,8 +161,8 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="{% url 'CCSBADMIN:dashboard' %}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
                         </li>
                         <li>
                             <a href="{% url 'CCSBADMIN:viewCarousels' %}">
@@ -208,7 +209,7 @@
                                     <a href="badge.html">Social Media</a>
                                 </li>
                                 <li>
-                                    <a href="badge.html">About Us</a>
+                                    <a href="{% url 'CCSBADMIN:aboutUs' %}">About Us</a>
                                 </li>
 
                             </ul>
@@ -347,25 +348,29 @@
                                 </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="../../../static/images/icon/avatar-01.jpg" alt="John Doe" />
-                                        </div>
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
-                                        </div>
+                                    {% if request.user.is_authenticated %}
+                                            <div class="image">
+                                                <img src="{{request.user.profile_pic.url}}" alt="John Doe" />
+                                            </div>
+                                            <div class="content">
+                                                <a class="js-acc-btn" href="#">{{ request.user.first_name}} {{ request.user.last_name}}</a>
+                                            </div>
+                                    {% endif %}
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="../../../static/images/icon/avatar-01.jpg" alt="John Doe" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#">john doe</a>
-                                                    </h5>
-                                                    <span class="email">johndoe@example.com</span>
-                                                </div>
+                                                {% if request.user.is_authenticated %}
+                                                    <div class="image">
+                                                        <a href="#">
+                                                            <img src="{{ request.user }}" alt="John Doe" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h5 class="name">
+                                                            <a href="#">{{ request.user.first_name}} {{ request.user.last_name}}</a>
+                                                        </h5>
+                                                        <span class="email">{{ request.user.email}}</span>
+                                                    </div>
+                                                {% endif %}
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
@@ -373,16 +378,17 @@
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                    <a href="{% url 'CCSBADMIN:login' %}">
+                                                        <i class="zmdi zmdi-settings"></i>Login</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                    <a href="{% url 'CCSBADMIN:register' %}">
+                                                        <i class="zmdi zmdi-money-box"></i>Register</a>
                                                 </div>
+
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="{% url 'CCSBADMIN:logout' %}">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>

@@ -70,7 +70,7 @@ class Newsletter(models.Model):
         return '%s' % (self.email)
 
 class AboutUs(models.Model):
-    about_image = models.ImageField(upload_to='events', max_length=200, null=False, blank=False)  # height_field=None, width_field=None,
+    about_image = models.ImageField(upload_to='aboutus', max_length=200, null=False, blank=False)  # height_field=None, width_field=None,
     about_title = models.CharField(max_length=150, null=False, blank=False)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

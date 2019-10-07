@@ -2,298 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e20217f8-796e-4e97-a81f-b6229a83ba72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/migrations/0008_auto_20191006_0057.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/migrations/0009_auto_20191006_0111.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/migrations/0010_auto_20191006_0113.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/contact/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/event/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/event/singleevent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/projects/singleproject.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/gallery_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/gallery_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/gallery_5_ZofDyDL.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/gallery_7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/header-bg00j_79R5gxV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/header-bg00j_W9zR02z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/header-bg00j_sVEaZKh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/header-bg00j_yEi24ks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/header-bg00j_zms3M12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/logo_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/events/png.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/project_image/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/project_image/success_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/project_image/success_1_BceGsIb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/WebOb-1.8.5.dist-info/zip-safe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic-1.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/checksum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/compiler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/inclusion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/injector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/publisher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/registry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/fanstatic/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1-py3.7-nspkg.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/namespace_packages.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.fullcalendar-2.9.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1-py2.7-nspkg.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/DESCRIPTION.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/namespace_packages.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.jquery-3.3.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1-py3.7-nspkg.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/namespace_packages.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js.momentjs-2.13.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/fullcalendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/fullcalendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/fullcalendar.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/fullcalendar.print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/gcal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang-all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ar-ma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ar-sa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ar-tn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/de-at.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/en-au.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/en-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/en-gb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/en-ie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/en-nz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/fr-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/fr-ch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/lb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/nn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/pt-br.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/sr-cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/resources/lang/zh-tw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/fullcalendar/test_fullcalendar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/resources/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/resources/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/resources/jquery-3.3.1.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/resources/jquery-3.3.1.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/resources/jquery-3.3.1.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/resources/jquery-3.3.1.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/jquery/test_jquery.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ar-ma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ar-sa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ar-tn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/be.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/bn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/bo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/br.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/bs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/cv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/de-at.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/dv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/en-au.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/en-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/en-gb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/en-ie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/en-nz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/eo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fr-ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fr-ch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/fy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/gd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/hy-am.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/jv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ka.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/kk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/km.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ky.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/lb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/lo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/me.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ml.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/mr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ms-my.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/my.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ne.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/nn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/pa-in.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/pt-br.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/se.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/si.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sr-cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ss.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/sw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/ta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/te.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/tl-ph.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/tlh.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/tzl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/tzm-latn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/tzm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/uz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/x-pseudo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/locale/zh-tw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-timezone-with-data-2010-2020.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-timezone-with-data-2010-2020.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-timezone-with-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-timezone-with-data.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-timezone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-timezone.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-with-locales.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment-with-locales.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/resources/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/js/momentjs/test_moment.js.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich-1.1.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich-1.1.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich-1.1.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich-1.1.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich-1.1.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/shutilwhich/lib.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/acceptparse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/byterange.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/cachecontrol.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/compat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/cookies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/datetime_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/dec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/descriptors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/etag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/exc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/headers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/multidict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/response.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/static.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Lib/site-packages/webob/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ccsb/Scripts/fanstatic-compile.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ccsb_django_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ccsb_django_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbadmin/migrations/0011_auto_20191007_0058.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/aboutus/singleaboutus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/register/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/register/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbadmin/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbadmin/templatetags/callmethod.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/aboutus/about_us.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccsbadmin/static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/static/css/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/templates/aahome/aalayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/templates/aahome/aalayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccsbadmin/templates/aboutus/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/templates/aboutus/aboutus.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -342,8 +63,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -362,19 +83,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccsbadmin/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccsbadmin/templates/register" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\register" />
       <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static\images" />
       <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\aahome" />
       <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\deleteafter" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -437,7 +159,7 @@
       <updated>1570207462319</updated>
       <workItem from="1570207465114" duration="4325000" />
       <workItem from="1570212124729" duration="51843000" />
-      <workItem from="1570305182658" duration="22762000" />
+      <workItem from="1570305182658" duration="44672000" />
     </task>
     <servers />
   </component>
