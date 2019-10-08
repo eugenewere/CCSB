@@ -1,0 +1,83 @@
+{% extends 'normal/layout/ablayout.html' %}
+{% load static %}
+{% block content %}
+
+        <section class="page-header" data-stellar-background-ratio="0.1">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-12 text-center">
+
+
+                        <h3>
+                            water recycling could just be the key to making our <p>fields green again</p>
+
+                        </h3>
+
+                        <p class="page-breadcrumb">
+                            <a href="{% url 'CCSB:home' %}">
+                        </p>
+
+
+                    </div>
+
+                </div> <!-- end .row  -->
+
+            </div> <!-- end .container  -->
+
+        </section> <!-- end .page-header  -->
+
+        <!--  MAIN CONTENT  -->
+
+        <!--  RECENT PROJECTS SECTION  -->
+
+        <section class="section-content-block section-secondary-bg">
+            
+            <div class="container wow fadeInUp">
+                
+                <div class="row section-heading-wrapper">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="section-heading">Recent Projects</h2>
+                        <p class="section-subheading">
+                            EXTREME EVENTS CAN ACCELERATE SHIFTS IN SPECIES COMPOSITION AND DISTRIBUTION
+                        </p>
+                    </div> <!-- end .col-sm-10  -->
+                </div> <!-- end .row  -->
+
+                <div class="row"> 
+                    {% for project in projects %}
+                        <div class="col-md-6 col-sm-12">
+                        <div class="cause-wrapper">
+                            <div class="col-sm-12 no-padding">
+                                <figure class="cause-img">
+                                    <img src="{{project.project_image.url}}" alt="Projects" />
+                                </figure> <!-- end .cause-img  -->
+                            </div> <!-- end .col-sm-12  -->
+                            <div class="col-sm-12 no-padding">
+                                <div class="cause-content">
+                                    <div class="fund-item-text">
+                                        <span class="fund-raised-text">{{project.project_title}}</span>
+                                    </div> <!--  end .fund-item-text  -->							
+                                    <div class="cause-text">
+                                        <h5><a href="#">{{project.project_title}}</a></h5>
+                                        <p>{{project.project_description|safe|escape}}</p>
+                                    </div> <!--  end .cause-text  -->
+                                    <div class="cause-link clearfix">
+                                        <a class="btn btn-default cause-button1" href="#"><span>Date Done -</span> {{ project.date|date:'d M Y'}}</a>
+                                        <a class="btn btn-default cause-button2" href="">View More</a>
+                                    </div>
+                                </div> <!-- end .cause-content  -->
+                            </div> <!-- end .col-sm-12  -->
+                        </div>
+                    </div> <!-- end .col-md-6  -->
+
+
+                    {% endfor %}
+                </div> <!-- end .row  -->
+            </div> <!-- end .container  -->
+        </section> <!-- end .cause-section  -->
+        <!-- FOOTER  -->
+
+       {% endblock %}

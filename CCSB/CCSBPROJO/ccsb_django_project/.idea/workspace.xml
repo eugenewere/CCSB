@@ -2,21 +2,145 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e20217f8-796e-4e97-a81f-b6229a83ba72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/migrations/0011_auto_20191007_0058.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/aboutus/singleaboutus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/register/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templates/register/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccsbadmin/templatetags/callmethod.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/aboutus/about_us.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/bootstrap-social.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/icon-styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/owl.video.play.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/css/venobox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/fontawesome-webfont5b62.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/fontawesome-webfont5b62.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/fontawesome-webfont5b62.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/fontawesome-webfont5b62.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/fontawesome-webfont5b62.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/glyphicons-halflings-regular-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/glyphicons-halflings-regular-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/glyphicons-halflings-regular-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/glyphicons-halflings-regular-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/glyphicons-halflings-regular.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/glyphicons-halflings-regulard41d.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/linea-basic-10.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/linea-basic-10.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/linea-basic-10.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/linea-basic-10.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/fonts/linea-basic-10d41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/about_us.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/action_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/bg-geometry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/blog-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/blog-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/cause-home2-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/cause-home2-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/close.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/counter_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/donation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/download.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/event-01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/event_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/event_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/event_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/footer_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/gallery_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/header-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/header-bg00j.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/header-bg20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/highlight_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/highlight_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/highlight_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/highlight_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/highlight_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/highlight_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_1_banner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_1_slider_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_1_slider_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_2_slider_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_2_slider_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_2_slider_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_2_slider_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/home_3_slider_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo-footer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/logo_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/mkk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/next.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/our_mission_bg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/preload-circle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/prev.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/success_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/success_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/success_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/team_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/team_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/team_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/team_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/uparr-48-b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/user_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/user_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/user_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/images/user_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/custom-scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/jquery.backTop.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/jquery.counterup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/jquery.gmap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/jquery.stellar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/venobox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/waypoints-sticky.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/static/js/wow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/about-us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/events.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/gallery-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/projects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/service.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/climatechangeandsustainabilitybasics/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/aboutus/aboutus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/blog/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/contact/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/events/events.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/home/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/layout/ablayout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templates/normal/projects/projects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templatetags2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccsbviewers/templatetags2/callmethod2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/events/cause-home2-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/events/highlight_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/events/png_eFwgD9D.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/project_image/highlight_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/project_image/home_2_slider_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/project_image/success_2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccsbadmin/static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/static/css/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/templates/aahome/aalayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/templates/aahome/aalayout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccsbadmin/templates/aboutus/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/templates/aboutus/aboutus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ccsbadmin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccsbadmin/templatetags/callmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/templatetags/callmethod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ccsbadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbadmin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccsbviewers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbviewers/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccsbviewers/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ccsbviewers/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../LML" beforeDir="false" afterPath="$PROJECT_DIR$/../../../LML" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../theelite" beforeDir="false" afterPath="$PROJECT_DIR$/../../../theelite" afterDir="false" />
@@ -83,20 +207,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccsbadmin/templates/register" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ccsbviewers/templates/normal/contact" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\register" />
-      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static\images" />
-      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\aahome" />
-      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\templates\deleteafter" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbviewers\templates\normal\contact" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbviewers\templates\normal\blog" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbviewers\templates\normal\events" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbviewers\templates\normal\projects" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbviewers\templates\normal\aboutus" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbviewers\static" />
+      <recent name="C:\projects\CCSB\CCSBPROJO\ccsb_django_project\ccsbadmin\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -159,7 +285,8 @@
       <updated>1570207462319</updated>
       <workItem from="1570207465114" duration="4325000" />
       <workItem from="1570212124729" duration="51843000" />
-      <workItem from="1570305182658" duration="44672000" />
+      <workItem from="1570305182658" duration="49408000" />
+      <workItem from="1570546382052" duration="22361000" />
     </task>
     <servers />
   </component>
@@ -171,7 +298,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

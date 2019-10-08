@@ -1,0 +1,149 @@
+{% extends 'normal/layout/ablayout.html' %}
+{% load static %}
+{% block content %}
+        <!--  PAGE HEADING -->
+
+        <section class="page-header" data-stellar-background-ratio="0.1">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-12 text-center">
+
+
+                        <h3>
+                            Contact Us
+                        </h3>
+
+                        <p class="page-breadcrumb">
+                            <a href="index-2.html">Home</a> / Contact
+                        </p>
+
+
+                    </div>
+
+                </div> <!-- end .row  -->
+
+            </div> <!-- end .container  -->
+
+        </section> <!-- end .page-header  -->
+
+
+        <!--  MAIN CONTENT  -->
+
+        <section class="section-content-block section-contact-block">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-6 wow fadeInLeft">
+
+                        <div class="contact-form-block">
+
+                            <h2 class="contact-title">GET IN TOUCH WITH US</h2>
+
+                            <form role="form" action="#" method="post" id="contact-form">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="author" placeholder="Name">                                            
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="url" placeholder="Subject">
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" name="comment" id="comment" placeholder="Message"></textarea>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-custom">Send Now</button>
+                                </div>
+
+                            </form>
+
+                        </div> <!-- end .contact-form-block  -->
+
+                    </div> <!--  end col-sm-6  -->
+
+                    <div class="col-sm-6 wow fadeInRight">
+
+                        <div class="content-block">
+
+                            <h2 class="contact-title">Contact us</h2>
+
+                            <ul class="contact-info">
+                                <li>
+                                    <span class="icon-container"><i class="fa fa-home"></i></span>
+                                    <address>Karen, Nairobi. Kenya</address>
+                                </li>
+                                <li>
+                                    <span class="icon-container"><i class="fa fa-phone"></i></span>
+                                    <address><a href="#">+254724439115</a></address>
+                                </li>
+                                <li>
+                                    <span class="icon-container"><i class="fa fa-envelope"></i></span>
+                                    <address><a href="mailto:">query@ccbs.org</a></address>
+                                </li>
+                                <li>
+                                    <span class="icon-container"><i class="fa fa-globe"></i></span>
+                                    <address><a href="#">www.ccbs.org</a></address>
+                                </li>
+                            </ul>
+
+                            <h2 class="contact-title">social media</h2>
+
+                            <div class="social-icons margin-top-11 clearfix">
+                                <a title="Tweet It" href="#" class="btn btn-social-icon btn-twitter petition_share">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+
+                                <a title="Share at Facebook" href="#" class="btn btn-social-icon btn-facebook petition_share">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+
+                                <a title="Share at Google+" href="#" class="btn btn-social-icon btn-goggle-plus petition_share">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+
+                                <a title="Share at Pinterest" href="#" class="btn btn-social-icon btn-pinterest petition_share">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </div>
+
+                        </div> <!-- end .content-block  -->
+
+                    </div> <!--  end col-sm-6  -->
+
+                </div> <!-- end row  -->
+
+            </div> <!--  end .container -->
+
+        </section> <!-- end .section-content-block  -->
+
+
+
+{#        <section class="section-google-map-block wow fadeInUp">#}
+{##}
+{#            <div id="map_canvas"></div>#}
+{##}
+{#        </section> <!-- end .section-content-block  -->#}
+
+        <!-- FOOTER  -->
+
+
+{% endblock %}
+{% block script %}
+    <script>
+        $(window).on("load", function () {
+
+            $("#preloader").fadeOut(500);
+
+        });
+    </script>
+{% endblock %}

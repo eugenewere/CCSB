@@ -46,9 +46,12 @@ class AboutUsForm(forms.ModelForm):
 class AdminForm(UserCreationForm):
     class Meta:
         model = Admin
-        fields = ['username','first_name', 'last_name','phone_no','email','password1','password2','profile_pic',]
+        fields = ['profile_pic','username','first_name', 'last_name','phone_no','email','password1','password2',]
 
-
+# class AdminImageForm(forms.ModelForm):
+#     class Meta:
+#         model = Admin
+#         fields = []
 
 
 

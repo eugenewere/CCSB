@@ -1,0 +1,294 @@
+{% extends 'normal/layout/ablayout.html' %}
+{% load static %}
+{% block content %}
+        <!--  PAGE HEADING -->
+
+    <section class="page-header" xmlns="http://www.w3.org/1999/html">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-12 text-center">
+
+                        <div class="page-breadcrumb">
+
+{#                        <span  style="color: white;">#}
+                            <h3  style="color: white;"> MISSION</h3>
+                            <span  style="color: white;">create awareness and reduce the impact of climate change for a sustainable society To</span>
+                            <h3 style="color: white;">VISION</h3>
+                            <i  style="color: white;">
+                                <b  style="color: white;">Preparing the earth</b>
+                            </i>
+{#                        </span>#}
+                        </div>
+                    </div>
+
+                </div> <!-- end .row  -->
+
+            </div> <!-- end .container  -->
+
+        </section> <!-- end .page-header  -->
+
+        <!--  ABOUT SECTION  -->
+
+        <section class="section-content-block who-are-we">
+
+            <div class="container">		
+
+                <div class="row">
+
+                    <div class="about-us">				
+                        {% for about in abouts %}
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                                <div class="about-us-text">
+                                    <h2 class="section-heading-inline">{{about.about_title}}</h2>
+                                    <p>{{ about.description|safe|escape }}</p>
+                                    <a class="btn btn-default about-us-button" href="single.html">Learn More</a>
+                                </div> <!--  end .About-text  -->
+                            </div>
+                            <div class="col-md-6 col-sm-12 hidden-xs">
+                                <figure class="about-us-img">
+                                    <img src="{{about.about_image.url}}" alt="{{about.about_title}}" />
+                                </figure> <!-- end .About-img  -->
+                            </div>
+                        {% endfor %}
+                    </div> <!-- end .about action -->
+                </div>
+            </div> <!-- end .container  -->
+        </section> <!-- end .about-section-  -->
+
+        
+        <!-- HOME 2 TEAM SECTION -->
+
+        <section class="section-content-block section-our-team section-secondary-bg">
+
+            <div class="container wow fadeInUp">
+
+                <div class="row section-heading-wrapper">
+
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="section-heading section-heading">Our Experts</h2>
+                        <p class="section-subheading">
+                             MEET OUR MEMBERS WHO ARE SOLVING DIFFERENT TYPES OF CLIMATE ISSUES AROUND THE WORLD
+                        </p>
+                    </div> <!-- end .col-sm-10  -->
+
+                </div> <!-- end .row  -->
+
+                <div class="row">
+                     <div class="row">
+                        <div id="latest_news" >
+                            {% for expert in experts %}
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="width: 376px;">
+                                    <div class="team-layout-2 xs-margin">
+                                        <figure class="team-member-2">
+                                            <a href="#" title="{{expert.expert_name}}">
+                                                <img src="{{expert.expert_image.url}}" alt="" />
+                                            </a>
+                                        </figure> <!-- end. team-member  -->
+                                        <h3 class="text-capitalize">{{expert.expert_name}}</h3>
+                                        <p>{{ expert.description|safe|escape }}</p>
+                                    </div> <!--  end team-layout-1 -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                     </div>
+                </div> <!-- end .row  -->
+
+            </div> <!-- end .container  -->
+
+        </section> <!--  end .section-our-team -->
+        
+
+        <!-- HOW WE WORK-->
+
+        <section class="section-content-block section-how-we-work">
+
+            <div class="container wow fadeInUp">
+
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h2 class="section-heading">Our Priorities</h2>						
+                        <p class="section-subheading">
+                            WE ARE CONCERNING ABOUT FOLLOWING ISSUES AND OUR MISSIONS ARE SOLVING THOSE ACROSS GLOBE. 
+                        </p>
+                    </div> <!-- end .col-sm-10  -->
+
+                </div> <!--  end .row  -->
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="service-block-bg xs-margin">
+
+                            <img src="{% static 'images/highlight_1.jpg' %}" alt="serives">
+                            <h3>Stop Cutting Down Trees</h3>
+{#                            <a class="fa fa-arrow-right" href="#"></a>#}
+
+                        </div>									
+
+                    </div> <!--  end col-md-3  -->                   				
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="service-block-bg xs-margin">
+
+                            <img src="{% static 'images/highlight_2.jpg' %}" alt="serives">
+                            <h3>Be efficient in energy use</h3>
+{#                            <a class="fa fa-arrow-right" href="#"></a>#}
+
+                        </div>
+
+
+                    </div> <!--  end col-md-3  -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="service-block-bg xs-margin">
+
+                            <img src="{%  static 'images/highlight_3.jpg' %}" alt="serives">
+                            <h3>Being water wise at home</h3>
+{#                            <a class="fa fa-arrow-right" href="#"></a>#}
+
+                        </div>				
+
+                    </div> <!--  end col-md-3  -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="service-block-bg xs-margin">
+
+                            <img src="{% static 'images/highlight_4.jpg' %}" alt="serives">
+                            <h3>Preventing air pollution</h3>
+{#                            <a class="fa fa-arrow-right" href="#"></a>#}
+
+                        </div>
+
+
+                    </div> <!--  end col-md-3  -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="service-block-bg xs-margin">
+
+                            <img src="{% static 'images/highlight_5.jpg' %}" alt="serives">
+                            <h3>Reducing greenhouse gas</h3>
+{#                            <a class="fa fa-arrow-right" href="#"></a>#}
+
+                        </div>				
+
+                    </div> <!--  end col-md-3  -->
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="service-block-bg xs-margin">
+
+                            <img src="{% static 'images/highlight_6.jpg' %}" alt="serives">
+                            <h3>Recycling the Daily waste</h3>
+{#                            <a class="fa fa-arrow-right" href="#"></a>#}
+
+                        </div>									
+
+                    </div> <!--  end col-md-3  -->
+
+
+                </div> <!-- end row  -->   				
+
+            </div> <!--  end .container  -->
+
+        </section> <!--  end .section-how-we-work -->
+
+
+        <!-- HOME DONATION -->
+
+        <section class="section-donate-now">
+            <div class="container wow fadeInUp">
+
+                <div class="row section-heading-wrapper">
+
+                    <div class="col-md-12 col-sm-12 text-center" img src="header-bg.jpg">
+                        <h2 class="section-heading section-heading-alt">GO GREEN</h2>
+                        <p class="section-subheading section-subheading-alt">
+                             WATER RECYLING IS THE KEY TO KEEPING OUR PLANET GREEN.
+                        </p>
+                    </div> <!-- end .col-sm-10  -->
+
+                </div> <!-- end .row  -->
+
+
+
+            </div> <!-- end .container  -->
+
+        </section>	<!-- end .donation section  -->
+
+
+        <!-- CLIENT LOGO SECTION  -->
+
+{#        <section class="section-content-block section-client-logo">#}
+{##}
+{#            <div class="container wow fadeInUp">#}
+{##}
+{#                <div class="row">#}
+{##}
+{#                    <div class="col-md-12 col-sm-12 text-center">#}
+{#                        <h2 class="section-heading"><span>Our</span> Donors</h2>#}
+{#                        <p class="section-subheading">#}
+{#                            YOU CAN JOIN WITH US BY DONATION AND ENCOURAGE OUR REAL HEROS TO SAVE THE  PLANET.#}
+{#                        </p>#}
+{#                    </div> <!-- end .col-sm-10  -->#}
+{##}
+{#                </div> <!--  end .row  -->#}
+{##}
+{#                <div class="row">#}
+{##}
+{#                    <div class="logo-items logo-layout-1 text-center">#}
+{##}
+{#                        <div class="logo">#}
+{##}
+{#                            <img src="images/logo_1.png" alt="" />#}
+{##}
+{#                        </div>#}
+{##}
+{#                        <div class="logo">#}
+{##}
+{#                            <img src="images/logo_2.png" alt="" />#}
+{##}
+{#                        </div>#}
+{##}
+{#                        <div class="logo">#}
+{##}
+{#                            <img src="images/logo_3.png" alt="" />#}
+{##}
+{#                        </div>#}
+{##}
+{#                        <div class="logo">#}
+{##}
+{#                            <img src="images/logo_4.png" alt="" />#}
+{##}
+{#                        </div>#}
+{##}
+{#                        <div class="logo">#}
+{##}
+{#                            <img src="images/logo_5.png" alt="" />#}
+{##}
+{#                        </div>#}
+{##}
+{##}
+{#                    </div> <!-- end .testimonial-container  -->#}
+{##}
+{#                </div> <!-- end row  -->#}
+{##}
+{#            </div> <!-- end .container  -->#}
+{##}
+{#        </section> <!--  end .section-client-logo -->#}
+
+
+
+        <!-- Back To Top Button  -->
+
+{% endblock content %}

@@ -12,5 +12,12 @@ register = template.Library()
 def user(request):
     admin = Admin.objects.filter(id=request.user.id).first()
     if admin is not None:
-        return admin.profile_pic.url
+        return admin.profile_pic
+    return False
+
+@register.filter(name='contacts')
+def contacts(request):
+    contact = Contact.objects.all()
+    if contact is not None:
+        return contact
     return False

@@ -61,6 +61,16 @@ class Event(models.Model):
     def __str__(self):
         return '%s %s ' % (self.events_image, self.events_title)
 
+    @property
+    def upcomingEvents(self):
+        today = datetime.date.today()
+        events = Event.objects.filter(event_date__gt=today)
+        if events is not  None:
+            return events
+        else:
+            return False
+
+
 class Newsletter(models.Model):
     email = models.CharField(max_length=200, null=False, blank=False )
     created_at = models.DateTimeField(auto_now_add=True)

@@ -558,14 +558,18 @@ def singleaboutUs(request, aboutus_id):
 
 def register(request):
     if request.method == 'POST':
-        form = AdminForm(request.POST, request.FILES)
-        print(form)
-        if form.is_valid():
-            form.save()
+        form = AdminForm(request.POST)
+
+
+        if form.is_valid() :
+            user = form.save(commit=False)
+            user.profile_pic = request.FILES.get('profile_pic')
+            user.save()
             messages.success(request, 'Registered Successfully Now Log In')
             return redirect('CCSBADMIN:login')
         else:
             form = AdminForm()
+
             messages.error(request, 'Registration Error')
             return render(request, "register/register.html", {'form': form})
     context = {

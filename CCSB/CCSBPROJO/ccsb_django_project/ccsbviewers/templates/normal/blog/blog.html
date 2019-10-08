@@ -1,0 +1,238 @@
+
+{% extends 'normal/layout/ablayout.html' %}
+{% load static %}
+{% block content %}
+        <section class="page-header" data-stellar-background-ratio="0.1">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-12 text-center">
+
+
+                        <h3>
+                        
+                        </h3>
+
+                        <p class="page-breadcrumb">
+                            <a href="#">LETS MAKE OUR LAND GREEN AGAIN</a>
+                        </p>
+
+
+                    </div>
+
+                </div> <!-- end .row  -->
+
+            </div> <!-- end .container  -->
+
+        </section> <!-- end .page-header  -->
+
+        {% for blog in blogs %}
+        <section class="section-content-block">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+
+                        <article class="post single-post-inner">
+
+                            <div class="single-post-inner-title">
+                                <h2>{{blog.blog_title}}</h2>
+                                <p class="single-post-meta"><i class="fa fa-user"></i>&nbsp; Dr.Eng Elisha Akech &nbsp; &nbsp; <i class="fa fa-share"></i>&nbsp; {{blog.blog_title}}</p>
+                            </div>
+
+                            <div class="single-post-inner-content">
+                                {{ blog.blog_description|slice:":405"|safe|escape }}
+                                <div class="post-inner-featured-content">
+                                    <img alt="" src="../../static/images/blog-1.jpg">
+                                </div>
+                                {{ blog.blog_description|slice:"405:"|safe|escape }}
+                            </div>
+                        </article> <!--  end single-post-container -->
+
+                        <div class="article-author clearfix">
+
+                            <div class="topic-bold-header clearfix">
+                                <h4>Article by <a href="#">Dr. Eng Elisha Akech</a></h4>
+                            </div> <!-- end .topic-bold-header  -->
+
+                            <figure class="author-avatar">
+                                <a href="#">
+                                    <img src="../../static/images/user_1.jpg" alt="Avatar">
+                                </a>
+                            </figure>
+
+                            <div class="about_author">
+                                    {{ blog.blog_title }}
+                            </div>
+                        </div> <!-- end .article-author  -->
+
+                        <div class="post-nav-section clearfix">
+{#                            <a class="btn btn-primary fr" href="#">Next Post <i class="fa fa-angle-double-right"></i></a>#}
+{#                            <a class="btn btn-primary" href="#"><i class="fa fa-angle-double-left"></i> Previous Post</a>#}
+                            {% if blogs.has_other_pages %}
+                                  <ul class="pagination">
+                                    {% if blogs.has_previous %}
+                                      <li>
+{#                                          <a class="btn btn-primary fr" href="?page={{ blogs.previous_page_number }}">&laquo;</a>Next Post <i class="fa fa-angle-double-right"></i>#}
+                                          <a class="btn btn-primary fr" href="?page={{ blogs.previous_page_number }}"><i class="fa fa-angle-double-left"></i> Previous Post </a>
+                                      </li>
+                                    {% else %}
+                                      <li class="disabled"><span>&laquo;</span></li>
+                                    {% endif %}
+                                    {% for i in blogs.paginator.page_range %}
+                                      {% if blogs.number == i %}
+                                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                      {% else %}
+                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% if blogs.has_next %}
+                                      <li >
+                                            <a class="btn btn-primary" href="?page={{ blogs.next_page_number }}"> Next Post<i class="fa fa-angle-double-right"></i></a>
+                                      </li>
+
+{#                                      <li><a class="btn btn-primary" href="?page={{ blogs.next_page_number }}">&raquo; <i class="fa fa-angle-double-left"></i> Previous Post</a></li>#}
+                                    {% else %}
+                                      <li class="disabled"><span>&raquo;</span></li>
+                                    {% endif %}
+                                  </ul>
+                                {% endif %}
+                        </div> <!-- end .post-nav-section  -->
+
+{#                        <div class="related-post">#}
+{##}
+{#                            <div class="topic-bold-header clearfix">#}
+{#                                <h4>Related Posts</h4>#}
+{#                            </div> <!-- end .topic-bold-header  -->#}
+{##}
+{#                            <ul>#}
+{#                                <li><a href="#">- Make Kalam's House A Knowledge Centre</a></li>#}
+{#                                <li><a href="#">- TRAI Pledges to Protect Net Neutrality </a></li>#}
+{#                                <li><a href="#">-  Improve Safety Measures For Women Passengers</a></li>#}
+{#                            </ul>#}
+{##}
+{#                        </div> <!-- end .related-post  -->#}
+
+                        <div class="comments-area" id="comments">
+                            <a href="#respond" class="article-add-comments"><i class="fa fa-plus"></i></a>         
+                            <div class="topic-bold-header clearfix">
+                                <h4 class="text-capitalize">comments</h4>
+                            </div> <!-- end .topic-bold-header  -->
+
+
+
+
+                            <ol class="commentslist">
+                                <li>
+                                    <article class="clearfix">
+                                        <header>
+                                            <h5><a href="#">Mahbub Alam Khan</a></h5>
+                                            <p><span>on jan 19th, 2013 at 3:05 Pm - </span><a href="#">Reply</a></p>
+                                        </header>
+
+                                        <figure class="comment-avatar">
+                                            <a href="#">
+                                                <img src="images/user_1.jpg" alt="Avatar">
+                                            </a>
+                                        </figure>
+
+                                        <p class="waiting-moderation">
+                                            Your comment is awaiting for moderation.
+                                        </p>
+
+                                        <div class="comment_text">
+                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                                        </div>
+
+                                    </article>
+                                </li>
+
+
+
+
+
+
+
+                            </ol>
+
+                            <div class="comments-nav-section clearfix">
+
+
+                                <a href="#" class="btn btn-primary fr">Newer Comments <i class="fa fa-angle-double-right"></i></a>
+                                <a href="#" class="btn btn-primary"><i class="fa fa-angle-double-left"></i> Older Comments</a>
+
+                            </div> <!-- end comments-nav-section-->
+
+                            <div id="respond">
+
+                                <div class="topic-bold-header clearfix">
+                                    <h4>Leave a reply</h4>
+                                </div> <!-- end .topic-bold-header  -->
+
+                                <form role="form" action="#" method="post" id="comment-form">
+
+                                    <div class="form-group">
+                                        <label for="author"></label>
+                                        <input type="text" class="form-control" id="author" placeholder="Name">
+                                    </div>
+                                    <div class="form-group" hidden>
+                                        <label for="author"></label>
+                                        <input name="blog" value="{{ blog.id }}" type="text" class="form-control" id="author" placeholder="Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email"></label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url"></label>
+                                        <input type="text" class="form-control" id="url" placeholder="URL">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="comment"></label>
+                                        <textarea class="form-control" rows="5" name="comment" id="comment" placeholder="Write Your Comment"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-custom">Submit Comment</button>
+                                    </div>
+
+                                </form>
+
+
+                            </div> <!-- end respond-->
+
+                        </div> <!-- end comments-area-->
+
+                    </div> <!--  end .single-post-container -->
+
+
+
+                </div> <!--  end row  -->
+
+            </div> <!--  end container -->
+
+        </section> <!-- end .section-content-block  -->   
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {% endblock %}
