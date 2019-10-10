@@ -45,7 +45,7 @@
                                 <div class="about-us-text">
                                     <h2 class="section-heading-inline">{{about.about_title}}</h2>
                                     <p>{{ about.description|safe|escape }}</p>
-                                    <a class="btn btn-default about-us-button" href="single.html">Learn More</a>
+{#                                    <a class="btn btn-default about-us-button" href="single.html">Learn More</a>#}
                                 </div> <!--  end .About-text  -->
                             </div>
                             <div class="col-md-6 col-sm-12 hidden-xs">
@@ -89,7 +89,7 @@
                                             </a>
                                         </figure> <!-- end. team-member  -->
                                         <h3 class="text-capitalize">{{expert.expert_name}}</h3>
-                                        <p>{{ expert.description|safe|escape }}</p>
+                                        <p>{{ expert.description|truncatechars:200|safe|escape }}</p>
                                     </div> <!--  end team-layout-1 -->
                                 </div>
                             {% endfor %}

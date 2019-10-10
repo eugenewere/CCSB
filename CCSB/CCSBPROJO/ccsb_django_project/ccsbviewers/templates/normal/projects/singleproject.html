@@ -1,0 +1,72 @@
+{% extends 'normal/layout/ablayout.html' %}
+{% load static %}
+{% block content %}
+
+        <!--  ABOUT SECTION  -->
+         <section class="page-header " style="height: 336px">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-12 text-center">
+                        <span class="text-white">
+                         <h2 style="color: whitesmoke;" class="text-white text-uppercase">{{project.project_title}}</h2>
+                        </span>
+                    </div>
+
+                </div> <!-- end.row  -->
+
+            </div> <!-- end .container  -->
+
+        </section> <!-- end .page-header  -->
+
+        <section class="section-content-block who-are-we">
+
+            <div class="container" style="padding: 180px 0;">
+
+                <div class="row">
+
+                    <div class="about-us ">
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                                <div class="about-us-text">
+                                    <h2 class="section-heading-inline">{{project.project_title}}</h2>
+                                    <p>{{ project.project_description|safe|escape }}</p>
+                                    <span>
+                                        <span class="btn btn-default about-us-button"> Date {{ project.date|date:"d M Y" }}</span>
+                                    </span>
+                                </div> <!--  end .About-text  -->
+                            </div>
+                            <div class="col-md-6 col-sm-12 hidden-xs">
+                                <figure class="about-us-img">
+                                    <img src="{{project.project_image.url}}" alt="{{project.project_image}}" />
+                                </figure> <!-- end .About-img  -->
+                            </div>
+                    </div> <!-- end .about action -->
+                </div>
+            </div> <!-- end .container  -->
+        </section> <!-- end .about-section-  -->
+
+
+        <!-- HOME DONATION -->
+
+        <section class="section-donate-now">
+            <div class="container wow fadeInUp">
+                <div class="row section-heading-wrapper">
+                    <div class="col-md-12 col-sm-12 text-center" >
+                        <h2 class="section-heading section-heading-alt">{{project.project_title}}</h2>
+                        <p  class="section-subheading section-subheading-alt text-white">
+                             <span class="text-white" style="color: white !important;">{{ project.project_description|safe|escape }}</span>
+                        </p>
+                    </div> <!-- end .col-sm-10  -->
+                </div> <!-- end .row  -->
+            </div> <!-- end .container  -->
+        </section>	<!-- end .donation section  -->
+
+
+
+        <!-- Back To Top Button  -->
+
+{% endblock content %}

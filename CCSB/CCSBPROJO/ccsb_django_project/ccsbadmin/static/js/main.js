@@ -75,6 +75,7 @@
     if (ctx) {
       ctx.height = 130;
       var myChart = new Chart(ctx, {
+
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June'],

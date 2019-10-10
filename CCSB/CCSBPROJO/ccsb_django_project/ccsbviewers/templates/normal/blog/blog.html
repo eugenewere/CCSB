@@ -74,48 +74,35 @@
 {#                            <a class="btn btn-primary fr" href="#">Next Post <i class="fa fa-angle-double-right"></i></a>#}
 {#                            <a class="btn btn-primary" href="#"><i class="fa fa-angle-double-left"></i> Previous Post</a>#}
                             {% if blogs.has_other_pages %}
-                                  <ul class="pagination">
-                                    {% if blogs.has_previous %}
-                                      <li>
-{#                                          <a class="btn btn-primary fr" href="?page={{ blogs.previous_page_number }}">&laquo;</a>Next Post <i class="fa fa-angle-double-right"></i>#}
-                                          <a class="btn btn-primary fr" href="?page={{ blogs.previous_page_number }}"><i class="fa fa-angle-double-left"></i> Previous Post </a>
-                                      </li>
-                                    {% else %}
-                                      <li class="disabled"><span>&laquo;</span></li>
-                                    {% endif %}
-                                    {% for i in blogs.paginator.page_range %}
-                                      {% if blogs.number == i %}
-                                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                                      {% else %}
-                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
-                                      {% endif %}
-                                    {% endfor %}
-                                    {% if blogs.has_next %}
-                                      <li >
-                                            <a class="btn btn-primary" href="?page={{ blogs.next_page_number }}"> Next Post<i class="fa fa-angle-double-right"></i></a>
-                                      </li>
+                              <ul class="pagination">
+                                {% if blogs.has_previous %}
+                                  <li class="page-item">
+                                      <a class="btn btn-primary fr page-link" href="?page={{ blogs.previous_page_number }}"><i class="fa fa-angle-double-left"></i> Previous Post </a>
+                                  </li>
+                                {% else %}
+                                  <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                {% for i in blogs.paginator.page_range %}
+                                  {% if blogs.number == i %}
+                                    <li class="active bg-success"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                  {% else %}
+                                    <li><a class="bg-success" href="?page={{ i }}">{{ i }}</a></li>
+                                  {% endif %}
+                                {% endfor %}
+                                {% if blogs.has_next %}
+                                  <li class="page-item">
+                                        <a class="btn btn-primary page-link" href="?page={{ blogs.next_page_number }}"> Next Post<i class="fa fa-angle-double-right"></i></a>
+                                  </li>
 
 {#                                      <li><a class="btn btn-primary" href="?page={{ blogs.next_page_number }}">&raquo; <i class="fa fa-angle-double-left"></i> Previous Post</a></li>#}
-                                    {% else %}
-                                      <li class="disabled"><span>&raquo;</span></li>
-                                    {% endif %}
-                                  </ul>
+                                {% else %}
+                                  <li class="disabled"><span>&raquo;</span></li>
                                 {% endif %}
+                              </ul>
+                            {% endif %}
                         </div> <!-- end .post-nav-section  -->
 
-{#                        <div class="related-post">#}
-{##}
-{#                            <div class="topic-bold-header clearfix">#}
-{#                                <h4>Related Posts</h4>#}
-{#                            </div> <!-- end .topic-bold-header  -->#}
-{##}
-{#                            <ul>#}
-{#                                <li><a href="#">- Make Kalam's House A Knowledge Centre</a></li>#}
-{#                                <li><a href="#">- TRAI Pledges to Protect Net Neutrality </a></li>#}
-{#                                <li><a href="#">-  Improve Safety Measures For Women Passengers</a></li>#}
-{#                            </ul>#}
-{##}
-{#                        </div> <!-- end .related-post  -->#}
+
 
                         <div class="comments-area" id="comments">
                             <a href="#respond" class="article-add-comments"><i class="fa fa-plus"></i></a>         
@@ -126,83 +113,128 @@
 
 
 
-                            <ol class="commentslist">
-                                <li>
-                                    <article class="clearfix">
-                                        <header>
-                                            <h5><a href="#">Mahbub Alam Khan</a></h5>
-                                            <p><span>on jan 19th, 2013 at 3:05 Pm - </span><a href="#">Reply</a></p>
-                                        </header>
 
-                                        <figure class="comment-avatar">
-                                            <a href="#">
-                                                <img src="images/user_1.jpg" alt="Avatar">
-                                            </a>
-                                        </figure>
+                                    <ol class="commentslist">
+                                        {% for comment in comments %}
+                                            {% if blog.id == comment.blog.id %}
+                                                <li>
+                                                    <article class="clearfix">
+                                                        <header>
+                                                            <h5><a class="text-capitalize" href="#">{{comment.person_name}}</a></h5>
+                                                            <p><span>on jan {{ comment.created_at|date:"d" }}th, {{ comment.created_at|date:"M" }} {{ comment.created_at|date:"Y" }} at {{ comment.created_at|date:"h:m a" }} - </span><a href="#">Reply</a></p>
+                                                        </header>
 
-                                        <p class="waiting-moderation">
-                                            Your comment is awaiting for moderation.
-                                        </p>
+                                                        <figure class="comment-avatar">
+                                                            <a href="#">
+                                                                <img src="images/user_1.jpg" alt="Avatar">
+                                                            </a>
+                                                        </figure>
 
-                                        <div class="comment_text">
-                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                                        </div>
+                                                        <p class="waiting-moderation">
+                                                            {{comment.person_email}}
+                                                        </p>
 
-                                    </article>
-                                </li>
+                                                        <div class="comment_text">
+                                                            {{comment.content}}
+                                                        </div>
+                                                    </article>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ol>
 
-
-
-
-
-
-
-                            </ol>
 
                             <div class="comments-nav-section clearfix">
 
 
-                                <a href="#" class="btn btn-primary fr">Newer Comments <i class="fa fa-angle-double-right"></i></a>
-                                <a href="#" class="btn btn-primary"><i class="fa fa-angle-double-left"></i> Older Comments</a>
+{#                                <a href="#" class="btn btn-primary fr">Newer Comments <i class="fa fa-angle-double-right"></i></a>#}
+{#                                <a href="#" class="btn btn-primary"><i class="fa fa-angle-double-left"></i> Older Comments</a>#}
+                                {% if comments.has_other_pages %}
+                                  <ul class="pagination">
+                                    {% if comments.has_previous %}
+                                      <li class="page-item">
+                                          <a class="btn btn-primary fr page-link" href="?page={{ comments.previous_page_number }}"><i class="fa fa-angle-double-left"> Previous Post </i></a>
+                                      </li>
+                                    {% else %}
+                                      <li class="disabled"><span>&laquo; Previous </span></li>
+                                    {% endif %}
+
+                                    {% for i in comments.paginator.page_range %}
+                                      {% if comments.number == i %}
+                                        <li class="active bg-success"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                      {% else %}
+                                        <li><a class="bg-success" href="?page={{ i }}">{{ i }}</a></li>
+                                      {% endif %}
+                                    {% endfor %}
+
+                                    {% if comments.has_next %}
+                                      <li class="page-item">
+                                            <a class="btn btn-primary page-link" href="?page={{comments.next_page_number }}"> Next Post<i class="fa fa-angle-double-right"></i></a>
+                                      </li>
+{#                                      <li><a class="btn btn-primary" href="?page={{ blogs.next_page_number }}">&raquo; <i class="fa fa-angle-double-left"></i> Previous Post</a></li>#}
+                                    {% else %}
+                                      <li class="disabled"><span>Next &raquo;</span></li>
+                                    {% endif %}
+                                  </ul>
+                                {% endif %}
 
                             </div> <!-- end comments-nav-section-->
 
                             <div id="respond">
-
+                                {% if messages %}
+                                     <div class="" style="height: 42px; padding-top: 89px; ">
+                                        <div class="">
+                                            <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <ul class="messages w-100">
+                                                          {% for message in messages %}
+                                                              <div class="alert {% if message.tags == 'error' %}alert-danger{% endif %}
+                                                                       {% if message.tags == 'success' %}alert-success{% endif %}
+                                                                       {% if message.tags == 'info' %}alert-info{% endif %}
+                                                                       alert-dismissible fade-in">
+                                                                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                  <span class="text-white {% if message.tags %} {{ message.tags }}{% endif %}" >
+                                                                      <strong class="text-capitalize">
+                                                                      {% if message.tags %} {{ message.tags }} {% endif %}!
+                                                                      </strong> {{ message }}
+                                                                  </span>
+                                                              </div>
+                                                          {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                               {% endif %}
                                 <div class="topic-bold-header clearfix">
                                     <h4>Leave a reply</h4>
                                 </div> <!-- end .topic-bold-header  -->
 
-                                <form role="form" action="#" method="post" id="comment-form">
-
+                                <form role="form" action="{% url 'CCSB:addblogComment' %}" method="post" id="comment-form">
+                                    {% csrf_token %}
                                     <div class="form-group">
                                         <label for="author"></label>
-                                        <input type="text" class="form-control" id="author" placeholder="Name">
+                                        <input name="person_name" type="text" class="form-control" id="author" placeholder="Name">
                                     </div>
                                     <div class="form-group" hidden>
                                         <label for="author"></label>
-                                        <input name="blog" value="{{ blog.id }}" type="text" class="form-control" id="author" placeholder="Name">
+                                        <input name="blog" value="{{ blog.id }}" type="text" class="form-control" id="author" placeholder="blog">
                                     </div>
-
                                     <div class="form-group">
                                         <label for="email"></label>
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <input name="person_email" type="email" class="form-control" id="email" placeholder="Email">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="url"></label>
-                                        <input type="text" class="form-control" id="url" placeholder="URL">
-                                    </div>
-
                                     <div class="form-group">
                                         <label for="comment"></label>
-                                        <textarea class="form-control" rows="5" name="comment" id="comment" placeholder="Write Your Comment"></textarea>
+                                        <textarea class="form-control" rows="5" name="content" id="comment" placeholder="Write Your Comment"></textarea>
                                     </div>
-
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-custom">Submit Comment</button>
                                     </div>
-
                                 </form>
 
 

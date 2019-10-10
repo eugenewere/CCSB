@@ -134,7 +134,7 @@ class Comment(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE,null=False,blank=False)
     person_name = models.CharField(max_length=100,null=True, blank=True)
     person_email = models.CharField(max_length=100,null=False, blank=False)
-    content = models.TextField(max_length=100,null=False, blank=False)
+    content = models.TextField()
 
     COMMENTSSTATUS = {
         ('READ','Read'),
@@ -157,3 +157,20 @@ class SocialMedia(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.social_name, self.social_url)
+
+class GetInTouch(models.Model):
+     name = models.CharField(max_length=300, null=False, blank=False)
+     email = models.CharField(max_length=300, null=False, blank=False)
+     subject = models.CharField(max_length=300, null=True, blank=True)
+     message = models.TextField()
+     CHOICES= {
+         ('READ', 'Read'),
+         ('UNREAD', 'Unread'),
+         ('TRASH', 'Trash'),
+     }
+     status = models.CharField(max_length=200, null=True, blank=True, choices=CHOICES, default='UNREAD')
+     created_at = models.DateTimeField(auto_now_add=True)
+     updated_at = models.DateTimeField(auto_now=True)
+
+     def __str__(self):
+         return '%s' % (self.name)

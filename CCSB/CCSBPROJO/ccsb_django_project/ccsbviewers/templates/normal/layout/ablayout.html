@@ -5,12 +5,12 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
         <meta charset="utf-8">
-        <title>CLIMATE CHANGE AND SUSTAINABILITY BASICS </title>
+        <title >{{title|title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="CLIMATE CHANGE AND SUSTAINABILITY " content="Awareness - Climate Change & Drought Effect Environmental.Climate Change and Sustainability Basics (CCSB) is an organization which is being started with the aim of passing knowledge According to WHO, by 2030 climate change could impact the earth by causing the following; warmer water and flooding to increase exposure to diseases in drinking and recreational water, we face up to 250,000 deaths as a result of diseases like malaria, malnutrition, diarrhea and heat stress. Also vector diseases like dengue virus will increase with more humidity and heat. There will be a 4o temperature rise which will disrupt precipitation patterns and the frequency and intensity of some of extreme weather events.Hunger and famine will increase as food production is destabilized by drought. Pollution and pollen seasons will increase leading to more allergies and asthma which will lead to deaths of up to 7million people due to air pollution.All these aspects to be addressed will cost the world approximately $2-4Billion Climate change is as a result of several aspects mostly contributed by human beings.MISSIONTo create awareness and reduce the impact of climate change for a sustainable societyVISION *Preparing the earth*
 ">
         <meta name="Dr.Eng Elisha Akech Ochungo" content="codeecstasy">
-        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+        <link rel="shortcut icon" href="{% static 'images/ccsb.png' %}" />
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
         {% block links %}{% endblock links %}
     </head>
-    <body>
+    <body style="scroll-behavior: smooth">
 
         <div id="preloader">
             <span class="margin-bottom"><img src="{% static 'images/loader.gif' %}" alt="" /></span>
@@ -104,7 +104,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="logo" href="{% url 'CCSB:home' %}"><img alt="" src="{% static 'images/logo-footer.png' %}"></a>
+                                <a  class="logo" href="{% url 'CCSB:home' %}"><img style="height: 60px;" alt="" src="{% static 'images/ccsb.png' %}"></a>
                             </div>
 
 
@@ -185,7 +185,7 @@
 
                                         <div class="col-md-3">
                                             <div class="footer-logo" >
-                                                <img src="../../static/images/logo-footer.png" alt="Logo" width="205">
+                                                <img src="{% static 'images/ccsb.png' %}" alt="Logo" width="205">
                                             </div>
                                         </div>
 
@@ -225,10 +225,39 @@
                                     </div>
 
                                     <div class="col-sm-12">
-
-                                        <form id="mc-form" class="mc-form fix" action="#">
+                                        {% if messages %}
+                                     <div class="" style="height: 42px; padding-top: 89px; ">
+                                        <div class="">
+                                            <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <ul class="messages w-100">
+                                                          {% for message in messages %}
+                                                              <div class="alert {% if message.tags == 'error' %}alert-danger{% endif %}
+                                                                       {% if message.tags == 'success' %}alert-success{% endif %}
+                                                                       {% if message.tags == 'info' %}alert-info{% endif %}
+                                                                       alert-dismissible fade-in">
+                                                                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                                  <span class="text-white {% if message.tags %} {{ message.tags }}{% endif %}" >
+                                                                      <strong class="text-capitalize">
+                                                                      {% if message.tags %} {{ message.tags }} {% endif %}!
+                                                                      </strong> {{ message }}
+                                                                  </span>
+                                                              </div>
+                                                          {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                               {% endif %}
+                                        <form method="POST" id="mc-form" class="mc-form fix" action="{% url "CCSB:addNewsLetter" %}">
+                                            {% csrf_token %}
                                             <div class="newsletter-form">
-                                                <input id="mc-email" name="EMAIL" placeholder="Email Address..." type="email">
+                                                <input required id="mc-email" name="email" placeholder="Email Address..." type="email">
                                                 <button id="mc-submit" type="submit">
                                                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
                                                 </button>
@@ -323,22 +352,22 @@
                                 <nav>
                                     <ul>
                                         <li>
-                                            <a href="index-2.html">Home</a>
+                                            <a href="{% url 'CCSB:home' %}">Home</a>
+                                        </li>
+{#                                        <li>#}
+{#                                            <a href="index-2.html">Causes</a>#}
+{#                                        </li>#}
+                                        <li>
+                                            <a href="{% url 'CCSB:events' %}">Events</a>
                                         </li>
                                         <li>
-                                            <a href="index-2.html">Causes</a>
+                                            <a href="{% url 'CCSB:aboutUs' %}">About</a>
                                         </li>
                                         <li>
-                                            <a href="events.html">Events</a>
+                                            <a href="{% url 'CCSB:blog' %}">Blog</a>
                                         </li>
                                         <li>
-                                            <a href="about-us.html">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="single.html">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">Contact</a>
+                                            <a href="{% url 'CCSB:contact' %}">Contact</a>
                                         </li>
                                     </ul>
                                 </nav>

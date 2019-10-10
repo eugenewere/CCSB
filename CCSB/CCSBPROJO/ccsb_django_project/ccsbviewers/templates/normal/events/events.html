@@ -5,28 +5,18 @@
         <!--  PAGE HEADING -->
 
         <section class="page-header" data-stellar-background-ratio="0.1">
-
             <div class="container">
-
                 <div class="row">
-
                     <div class="col-sm-12 text-center">
-
                         <h3>
                             Event Lists
                         </h3>
-
                         <p class="page-breadcrumb">
                             <a href="{% url 'CCSB:home' %}">Home</a> / All Events
                         </p>
-
-
                     </div>
-
                 </div> <!-- end .row  -->
-
             </div> <!-- end .container  -->
-
         </section> <!-- end .page-header  -->
 
         <!--  MAIN CONTENT  -->
@@ -40,7 +30,7 @@
                     <div class="row">
 
                         <div class="col-md-5 col-sm-12">
-                            <input type="text" class="form-control" placeholder="Events From">
+                            <input type="date" class="form-control"  placeholder="Events From">
                         </div><!-- end .col-sm-5 -->
 
                         <div class="col-md-5  col-sm-12">
@@ -77,28 +67,51 @@
 
                 <div class="row">
                      {% for event in events %}
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="event_wrapper-1 xs-margin">
-                            <figure class="event-img" style="height: 217px; overflow: hidden;">
-                                <img src="{{event.events_image.url}}" alt="event" />
-                            </figure> <!-- end .event-img  -->
-                            <div class="event-text">
-                                <span class="event-date">{{ event.event_date|date:"j M Y" }}</span>
-                                <h5><a href="#">{{event.events_title}}</a></h5>
-                                <p>{{ event.events_description|truncatechars:150|safe|escape }}<a href="">Read More</a></p>
-                            </div> <!--  end .event-text  -->
-
-                        </div><!-- end .custom-event-list-wrapper -->
-
-                    </div> <!-- end .col-md-4  -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="event_wrapper-1 xs-margin">
+                                <figure class="event-img" style="height: 217px; overflow: hidden;">
+                                    <img src="{{event.events_image.url}}" alt="event" />
+                                </figure> <!-- end .event-img  -->
+                                <div class="event-text">
+                                    <span class="event-date">{{ event.event_date|date:"j M Y" }}</span>
+                                    <h5><a href="#">{{event.events_title}}</a></h5>
+                                    <p>{{ event.events_description|truncatechars:150|safe|escape }}<a href="{% url 'CCSB:singleEvents' event.id %}">Read More</a></p>
+                                </div> <!--  end .event-text  -->
+                            </div><!-- end .custom-event-list-wrapper -->
+                        </div> <!-- end .col-md-4  -->
                     {% endfor %}
                 </div> <!-- end .row  -->
 
 
                 <div class="row">
-                    <div class="col-sm-12 col-md-4 col-md-offset-4 text-center">
-                        <a href="#" class="btn btn-load-more">- Load All Events -</a>
-                    </div>
+                    {% if events.has_other_pages %}
+                      <ul class="pagination">
+                        {% if events.has_previous %}
+                          <li class="page-item">
+                              <a class="btn btn-primary fr page-link" href="?page={{ events.previous_page_number }}"><i class="fa fa-angle-double-left"> Previous Post </i></a>
+                          </li>
+                        {% else %}
+                          <li class="disabled"><span>&laquo; Previous </span></li>
+                        {% endif %}
+
+                        {% for i in events.paginator.page_range %}
+                          {% if events.number == i %}
+                            <li class="active bg-success"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                          {% else %}
+                            <li><a class="bg-success" href="?page={{ i }}">{{ i }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+
+                        {% if events.has_next %}
+                          <li class="page-item">
+                                <a class="btn btn-primary page-link" href="?page={{events.next_page_number }}"> Next Post<i class="fa fa-angle-double-right"></i></a>
+                          </li>
+{#                                      <li><a class="btn btn-primary" href="?page={{ blogs.next_page_number }}">&raquo; <i class="fa fa-angle-double-left"></i> Previous Post</a></li>#}
+                        {% else %}
+                          <li class="disabled"><span>Next &raquo;</span></li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
                 </div> <!-- end .row  -->
 
 

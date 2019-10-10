@@ -52,7 +52,7 @@
                         <div class="cause-wrapper">
                             <div class="col-sm-12 no-padding">
                                 <figure class="cause-img">
-                                    <img src="{{project.project_image.url}}" alt="Projects" />
+                                    <img style="height: 338px; width: 100%;" src="{{project.project_image.url}}" alt="Projects" />
                                 </figure> <!-- end .cause-img  -->
                             </div> <!-- end .col-sm-12  -->
                             <div class="col-sm-12 no-padding">
@@ -62,11 +62,11 @@
                                     </div> <!--  end .fund-item-text  -->							
                                     <div class="cause-text">
                                         <h5><a href="#">{{project.project_title}}</a></h5>
-                                        <p>{{project.project_description|safe|escape}}</p>
+                                        <p>{{project.project_description|truncatechars:200|safe|escape}}</p>
                                     </div> <!--  end .cause-text  -->
                                     <div class="cause-link clearfix">
                                         <a class="btn btn-default cause-button1" href="#"><span>Date Done -</span> {{ project.date|date:'d M Y'}}</a>
-                                        <a class="btn btn-default cause-button2" href="">View More</a>
+                                        <a class="btn btn-default cause-button2" href="{% url 'CCSB:singleProject' project.id %}">View More</a>
                                     </div>
                                 </div> <!-- end .cause-content  -->
                             </div> <!-- end .col-sm-12  -->

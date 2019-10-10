@@ -1,8 +1,10 @@
 import json
+from datetime import date
 
 from django.contrib import messages
 
 from django.contrib.auth import authenticate, logout, login, get_user_model
+from django.db.models import Q
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import *
@@ -11,11 +13,21 @@ from django.contrib.auth import login as auth_login
 # Create your views here.
 
 def dashboard(request):
+    experts_count = Expert.objects.all().count()
+    today = date.today()
 
+    events_count =Event.objects.filter(event_date__gt=today).count()
+    print(events_count, events_count)
+    project_count = Project.objects.all().count()
+    comment_count = Comment.objects.all().count()
     user =request.user
     context ={
         'title':'Dashboard',
         'user': user,
+        'experts_count':experts_count ,
+        'events_count':events_count ,
+        'project_count':project_count,
+        'comment_count':comment_count,
     }
 
     return render(request, 'aahome/index.html', context)
@@ -603,3 +615,74 @@ def adminlogin(request):
 def adminlogout(request):
     logout(request)
     return redirect('CCSBADMIN:login')
+
+
+def newsLetter(request):
+    context = {
+        'title':'NewsLetter,'
+    }
+    return render(request,'newsletter/newsletter.html', context)
+
+
+def comment(request):
+    comments = Comment.objects.all()
+
+    context = {
+        'title':'comment',
+        'comments':comments
+    }
+    return render(request,'comments/comment.html', context)
+
+
+def singleComment(request, comment_id):
+    comment = Comment.objects.filter(id=comment_id).first()
+    if comment is not None:
+        Comment.objects.filter(id=int(comment.id)).update(
+            status='READ'
+        )
+    context = {
+        'title':comment.person_name,
+        'comment': comment
+    }
+    return render(request,'comments/singlecomment.html', context)
+
+
+def singleCommentDelete(request,comment_id):
+    comment = Comment.objects.filter(id=comment_id).first()
+    if comment is not None:
+        comment.delete()
+        messages.success(request,'Comment Deleted Succesfully')
+        return redirect("CCSBADMIN:comment")
+    return redirect("CCSBADMIN:comment")
+
+
+def getintouch(request):
+    getintouchs = GetInTouch.objects.all()
+
+    context = {
+        'title': 'getintouch',
+        'getintouchs': getintouchs
+    }
+    return render(request, 'getintouch/getintouch.html',context)
+
+
+def deletegetintouch(request, getintouch_id):
+    getintouch = GetInTouch.objects.filter(id=getintouch_id).first()
+    if getintouch is not None:
+        getintouch.delete()
+        messages.success(request, getintouch.name+'Deleted Succesfully')
+        return redirect("CCSBADMIN:getintouch")
+    return redirect("CCSBADMIN:getintouch")
+
+
+def singlegetintouch(request,getintouch_id):
+    getintouch = GetInTouch.objects.filter(id=getintouch_id).first()
+    if getintouch is not None:
+        GetInTouch.objects.filter(id=int(getintouch.id)).update(
+            status='READ'
+        )
+    context = {
+        'title': getintouch.name,
+        'getintouch': getintouch
+    }
+    return render(request, 'getintouch/singlegetintouch.html', context)

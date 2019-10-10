@@ -1,0 +1,15 @@
+{% extends "normal/layout/ablayout.html" %}
+{% load static %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <div class="col-sm-12 my-5" style="background: whitesmoke;height: 100vh;padding-top: 357px;">
+        <div class="row">
+           <div class="container text-center">
+               <h2 style="font-size: 27px;"> Thank you for submitting your email <span style="color: #1c7430">{{ email }}</span>  you will recieve emails frequently about this site</h2>
+               <span class="btn btn-success text-white"><a style="color: whitesmoke;" class="text-white" href="{% url 'CCSB:home' %}">Go Home</a></span>
+           </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block scripts %}
+{% endblock scripts %}
