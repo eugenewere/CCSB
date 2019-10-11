@@ -60,7 +60,6 @@ urlpatterns =[
     path('editaboutUs/<int:aboutus_id>',views.editaboutUs, name='editaboutUs'),
     path('singleaboutUs/<int:aboutus_id>',views.singleaboutUs, name='singleaboutUs'),
 
-    path('newsLetter/', views.newsLetter, name='newsLetter'),
 
 
     path('comment/', views.comment, name='comment'),
@@ -70,5 +69,9 @@ urlpatterns =[
     path('getintouch/', views.getintouch, name='getintouch'),
     path('deletegetintouch/<int:getintouch_id>', views.deletegetintouch, name='deletegetintouch'),
     path('singlegetintouch/<int:getintouch_id>', views.singlegetintouch, name='singlegetintouch'),
+
+    path('newsLetter/', views.newsLetter, name='newsLetter'),
+    path('nsingleewsLetter/<int:newslettermessage_id>', views.singlenewsLetter, name='singlenewsLetter'),
+    path('sendemails/', views.sendEmails, name='sendemails'),
 
 ]

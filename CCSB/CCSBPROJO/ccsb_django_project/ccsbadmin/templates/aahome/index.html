@@ -1,8 +1,12 @@
 {% extends "aahome/aalayout.html" %}
 {% load static %}
+{% load callmethod %}
 {% block title %}{{ title }}{% endblock title %}
 {% block links %}
-
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css">
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
 {% endblock links %}
 {% block content %}
  <!-- MAIN CONTENT-->
@@ -169,128 +173,53 @@
 {#                            </div>#}
 {#                        </div>#}
                         <div class="row">
-                            <div class="col-lg-9">
+                            <div class="col-lg-7">
                                 <h2 class="title-1 m-b-25">Earnings By Items</h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
+                                    <table class="table tablez table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>date</th>
-                                                <th>order ID</th>
+                                                <th>#</th>
                                                 <th>name</th>
-                                                <th class="text-right">price</th>
-                                                <th class="text-right">quantity</th>
-                                                <th class="text-right">total</th>
+                                                <th>email</th>
+                                                <th class="text-right">date created</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100398</td>
-                                                <td>iPhone X 64Gb Grey</td>
-                                                <td class="text-right">$999.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$999.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Samsung S8 Black</td>
-                                                <td class="text-right">$756.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$756.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>100396</td>
-                                                <td>Game Console Controller</td>
-                                                <td class="text-right">$22.00</td>
-                                                <td class="text-right">2</td>
-                                                <td class="text-right">$44.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-26 23:06</td>
-                                                <td>100395</td>
-                                                <td>iPhone X 256Gb Black</td>
-                                                <td class="text-right">$1199.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$1199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-25 19:03</td>
-                                                <td>100393</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="text-right">$10.00</td>
-                                                <td class="text-right">3</td>
-                                                <td class="text-right">$30.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100392</td>
-                                                <td>Smartwatch 4.0 LTE Wifi</td>
-                                                <td class="text-right">$199.00</td>
-                                                <td class="text-right">6</td>
-                                                <td class="text-right">$1494.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-24 19:10</td>
-                                                <td>100391</td>
-                                                <td>Camera C430W 4k</td>
-                                                <td class="text-right">$699.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$699.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-22 00:43</td>
-                                                <td>100393</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="text-right">$10.00</td>
-                                                <td class="text-right">3</td>
-                                                <td class="text-right">$30.00</td>
-                                            </tr>
+                                            {% for comment in comments %}
+                                                <tr>
+                                                    <td>{{forloop.counter}}</td>
+                                                    <td>{{comment.person_name}}</td>
+                                                    <td>{{comment.person_email}}</td>
+                                                    <td class="text-right">{{comment.created_at|date:"d-M-Y"}}</td>
+                                                </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <h2 class="title-1 m-b-25">Top countries</h2>
-                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                            <div class="col-lg-5">
+                                    <h2 class="title-1 m-b-25">List Of Recipients</h2>
+                                    <div style="max-height: 455px; overflow-y: auto;" class="au-card au-card--bg-blue au-card-top-countries m-b-40">
                                     <div class="au-card-inner">
                                         <div class="table-responsive">
                                             <table class="table table-top-countries">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-white">#</th>
+                                                        <th class="text-white">Email</th>
+                                                        <th class="text-white">Date Subscribed</th>
+                                                    </tr>
+                                                </thead>
                                                 <tbody>
+                                                {% for email in emails %}
                                                     <tr>
-                                                        <td>United States</td>
-                                                        <td class="text-right">$119,366.96</td>
+                                                        <td>{{ forloop.counter }}</td>
+                                                        <td class="">{{email.email}}</td>
+                                                        <td class="text-right">{{email.created_at|date:"d:M:Y"}}</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td class="text-right">$70,261.65</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>United Kingdom</td>
-                                                        <td class="text-right">$46,399.22</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Turkey</td>
-                                                        <td class="text-right">$35,364.90</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Germany</td>
-                                                        <td class="text-right">$20,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>France</td>
-                                                        <td class="text-right">$10,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td class="text-right">$5,366.96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Italy</td>
-                                                        <td class="text-right">$1639.32</td>
-                                                    </tr>
+                                                {% endfor %}
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -304,68 +233,45 @@
                                     <div class="au-card-title" style="background-image:url('{% static 'images/bg-title-01.jpg' %}');">
                                         <div class="bg-overlay bg-overlay--blue"></div>
                                         <h3>
-                                            <i class="zmdi zmdi-account-calendar"></i>26 April, 2018</h3>
-                                        <button class="au-btn-plus">
-                                            <i class="zmdi zmdi-plus"></i>
-                                        </button>
+                                            <i class="zmdi zmdi-account-calendar"></i>
+                                            {% if upcoming_event %}
+                                              Upcoming Event  {{ upcoming_event.event_date|date:"d-M-Y" }}
+                                            {% else %}
+                                                No upcoming new events
+                                            {% endif %}
+                                        </h3>
+{#                                        <button class="au-btn-plus">#}
+{#                                            <i class="zmdi zmdi-plus"></i>#}
+{#                                        </button>#}
                                     </div>
                                     <div class="au-task js-list-load">
                                         <div class="au-task__title">
-                                            <p>Tasks for John Doe</p>
+                                            <p>Events</p>
                                         </div>
                                         <div class="au-task-list js-scrollbar3">
-                                            <div class="au-task__item au-task__item--danger">
+                                            {% for event in events %}
+                                            <div  class="au-task__item
+                                                {% if forloop.counter == 1 %}au-task__item--danger{% endif %}
+                                                {% if forloop.counter == 2 %}au-task__item--warning{% endif %}
+                                                {% if forloop.counter == 3 %}au-task__item--success{% endif %}
+                                                {% if forloop.counter == 4 %}au-task__item--primary{% endif %}
+                                                {% if forloop.counter > 4 %}au-task__item--danger{% endif %}
+                                                {% if forloop.counter > 4 %}js-load-item{% endif %}">
                                                 <div class="au-task__item-inner">
                                                     <h5 class="task">
-                                                        <a href="#">Meeting about plan for Admin Template 2018</a>
+                                                        <a href="{% url "CCSBADMIN:viewSingleEvents" event.id %}">{{ event.events_title|title }}</a>
                                                     </h5>
-                                                    <span class="time">10:00 AM</span>
+                                                    <span class="time">{{ event.event_date|date:"d-M-Y"}}</span>
                                                 </div>
                                             </div>
-                                            <div class="au-task__item au-task__item--warning">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Create new task for Dashboard</a>
-                                                    </h5>
-                                                    <span class="time">11:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--primary">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Meeting about plan for Admin Template 2018</a>
-                                                    </h5>
-                                                    <span class="time">02:00 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--success">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Create new task for Dashboard</a>
-                                                    </h5>
-                                                    <span class="time">03:30 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--danger js-load-item">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Meeting about plan for Admin Template 2018</a>
-                                                    </h5>
-                                                    <span class="time">10:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--warning js-load-item">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Create new task for Dashboard</a>
-                                                    </h5>
-                                                    <span class="time">11:00 AM</span>
-                                                </div>
-                                            </div>
+                                            {% endfor %}
+
                                         </div>
-                                        <div class="au-task__footer">
-                                            <button class="au-btn au-btn-load js-load-btn">load more</button>
-                                        </div>
+                                        {% if events.count > 4 %}
+                                            <div class="au-task__footer">
+                                                <button class="au-btn au-btn-load js-load-btn">load more</button>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -374,178 +280,104 @@
                                     <div class="au-card-title" style="background-image:url('{% static 'images/bg-title-02.jpg' %}');">
                                         <div class="bg-overlay bg-overlay--blue"></div>
                                         <h3>
-                                            <i class="zmdi zmdi-comment-text"></i>New Messages</h3>
-                                        <button class="au-btn-plus">
-                                            <i class="zmdi zmdi-plus"></i>
-                                        </button>
+                                            <i class="zmdi zmdi-comment-text"></i>
+                                            {% if request|getintouch_unread_count > 0 %}
+                                                {{ request|getintouch_unread_count }} New Unread Messages
+                                            {% else %}
+                                                No New Messages
+                                            {% endif %}
+                                        </h3>
+{#                                        <button class="au-btn-plus">#}
+{#                                            <i class="zmdi zmdi-plus"></i>#}
+{#                                        </button>#}
                                     </div>
                                     <div class="au-inbox-wrap js-inbox-wrap">
                                         <div class="au-message js-list-load">
                                             <div class="au-message__noti">
-                                                <p>You Have
-                                                    <span>2</span>
 
-                                                    new messages
-                                                </p>
+                                                    <span>
+                                                        {% if request|getintouch_unread_count > 0 %}
+                                                           <p>You Have {{ request|getintouch_unread_count }} new messages</p>
+                                                        {% else %}
+                                                            No New Messages
+                                                        {% endif %}
+                                                    </span>
+
                                             </div>
                                             <div class="au-message-list">
-                                                <div class="au-message__item unread">
+                                                {% for intouch in request|get_intouch|slice:5 %}
+                                                <div class="au-message__item
+                                                    {% if intouch.status == 'UNREAD' %}unread{% endif %}
+                                                    {% if forloop.counter > 4 %}js-load-item{% endif %}">
                                                     <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap">
+                                                        <div class="d-flex">
+                                                            <div class="avatar-wrap m-r-30">
                                                                 <div class="avatar">
-                                                                    <img src="../../../static/images/icon/avatar-02.jpg" alt="John Smith">
+                                                                    <img src="{% static 'images/coolavatar.jpg' %}" alt="{{intouch.name}}">
                                                                 </div>
                                                             </div>
-                                                            <div class="text">
-                                                                <h5 class="name">John Smith</h5>
-                                                                <p>Have sent a photo</p>
+                                                            <div class="text d-flex flex-column">
+                                                                <a href="{% url 'CCSBADMIN:singlegetintouch' intouch.id %}"><h5 class="name" {% if intouch.status == 'UNREAD' %} style="font-weight: bolder;" {% endif %}>{{intouch.name|title}}</h5></a>
+                                                                <a href="{% url 'CCSBADMIN:singlegetintouch' intouch.id %}"> <p {% if intouch.status == 'UNREAD' %} style="font-weight: bolder;" {% endif %}>{{intouch.subject|title|truncatechars:20}}</p></a>
                                                             </div>
                                                         </div>
                                                         <div class="au-message__item-time">
-                                                            <span>12 Min ago</span>
+                                                            <span {% if intouch.status == 'UNREAD' %} style="font-weight: bolder;" {% endif %}>{{intouch.created_at|date:"d M Y"}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="au-message__item unread">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap online">
-                                                                <div class="avatar">
-                                                                    <img src="../../../static/images/icon/avatar-03.jpg" alt="Nicholas Martinez">
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Nicholas Martinez</h5>
-                                                                <p>You are now connected on message</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>11:00 PM</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap online">
-                                                                <div class="avatar">
-                                                                    <img src="../../../static/images/icon/avatar-04.jpg" alt="Michelle Sims">
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Lorem ipsum dolor sit amet</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Yesterday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap">
-                                                                <div class="avatar">
-                                                                    <img src="../../../static/images/icon/avatar-05.jpg" alt="Michelle Sims">
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Purus feugiat finibus</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Sunday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item js-load-item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap online">
-                                                                <div class="avatar">
-                                                                    <img src="../../../static/images/icon/avatar-04.jpg" alt="Michelle Sims">
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Lorem ipsum dolor sit amet</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Yesterday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item js-load-item">
-                                                    <div class="au-message__item-inner">
-                                                        <div class="au-message__item-text">
-                                                            <div class="avatar-wrap">
-                                                                <div class="avatar">
-                                                                    <img src="../../../static/images/icon/avatar-05.jpg" alt="Michelle Sims">
-                                                                </div>
-                                                            </div>
-                                                            <div class="text">
-                                                                <h5 class="name">Michelle Sims</h5>
-                                                                <p>Purus feugiat finibus</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="au-message__item-time">
-                                                            <span>Sunday</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {% endfor %}
                                             </div>
+                                            {% if request|getintouch_unread_count > 4 %}
                                             <div class="au-message__footer">
                                                 <button class="au-btn au-btn-load js-load-btn">load more</button>
                                             </div>
+                                            {% endif %}
                                         </div>
-                                        <div class="au-chat">
-                                            <div class="au-chat__title">
-                                                <div class="au-chat-info">
-                                                    <div class="avatar-wrap online">
-                                                        <div class="avatar avatar--small">
-                                                            <img src="../../../static/images/icon/avatar-02.jpg" alt="John Smith">
-                                                        </div>
-                                                    </div>
-                                                    <span class="nick">
-                                                        <a href="#">John Smith</a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="au-chat__content">
-                                                <div class="recei-mess-wrap">
-                                                    <span class="mess-time">12 Min ago</span>
-                                                    <div class="recei-mess__inner">
-                                                        <div class="avatar avatar--tiny">
-                                                            <img src="../../../static/images/icon/avatar-02.jpg" alt="John Smith">
-                                                        </div>
-                                                        <div class="recei-mess-list">
-                                                            <div class="recei-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                                            <div class="recei-mess">Donec tempor, sapien ac viverra</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="send-mess-wrap">
-                                                    <span class="mess-time">30 Sec ago</span>
-                                                    <div class="send-mess__inner">
-                                                        <div class="send-mess-list">
-                                                            <div class="send-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="au-chat-textfield">
-                                                <form class="au-form-icon">
-                                                    <input class="au-input au-input--full au-input--h65" type="text" placeholder="Type a message">
-                                                    <button class="au-input-icon">
-                                                        <i class="zmdi zmdi-camera"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
+{#                                        <div class="au-chat">#}
+{#                                            <div class="au-chat__title">#}
+{#                                                <div class="au-chat-info">#}
+{#                                                    <div class="avatar-wrap online">#}
+{#                                                        <div class="avatar avatar--small">#}
+{#                                                            <img src="../../../static/images/icon/avatar-02.jpg" alt="John Smith">#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <span class="nick">#}
+{#                                                        <a href="#">John Smith</a>#}
+{#                                                    </span>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="au-chat__content">#}
+{#                                                <div class="recei-mess-wrap">#}
+{#                                                    <span class="mess-time">12 Min ago</span>#}
+{#                                                    <div class="recei-mess__inner">#}
+{#                                                        <div class="avatar avatar--tiny">#}
+{#                                                            <img src="../../../static/images/icon/avatar-02.jpg" alt="John Smith">#}
+{#                                                        </div>#}
+{#                                                        <div class="recei-mess-list">#}
+{#                                                            <div class="recei-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>#}
+{#                                                            <div class="recei-mess">Donec tempor, sapien ac viverra</div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="send-mess-wrap">#}
+{#                                                    <span class="mess-time">30 Sec ago</span>#}
+{#                                                    <div class="send-mess__inner">#}
+{#                                                        <div class="send-mess-list">#}
+{#                                                            <div class="send-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="au-chat-textfield">#}
+{#                                                <form class="au-form-icon">#}
+{#                                                    <input class="au-input au-input--full au-input--h65" type="text" placeholder="Type a message">#}
+{#                                                    <button class="au-input-icon">#}
+{#                                                        <i class="zmdi zmdi-camera"></i>#}
+{#                                                    </button>#}
+{#                                                </form>#}
+{#                                            </div>#}
+{#                                        </div>#}
                                     </div>
                                 </div>
                             </div>
@@ -563,5 +395,23 @@
             <!-- END MAIN CONTENT-->
 {% endblock content %}
 {% block scripts %}
+        <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.tablez').DataTable(
+               {#{#}
+               {# "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {#}
+               {#         $('td', nRow).css('background-color', '#323a46');#}
+               {# }#}
+
+          );
+        });
+    </script>
 {% endblock scripts %}

@@ -1,9 +1,18 @@
 from django.contrib import messages
+from django.core.mail import EmailMultiAlternatives
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from django.utils.html import strip_tags
+
 # Create your views here.
+from django.template.loader import get_template
+
+from ccsb_django_project import settings
 from ccsbadmin.models import *
 from ccsbviewers.forms import *
 
@@ -172,3 +181,5 @@ def addNewsLetter(request):
             messages.error(request, 'Your Comment Not Taken Please Check Your Input Fields')
             return redirect("CCSB:home")
     return redirect("CCSB:home")
+
+

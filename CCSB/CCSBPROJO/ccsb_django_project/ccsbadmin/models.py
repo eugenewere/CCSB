@@ -174,3 +174,13 @@ class GetInTouch(models.Model):
 
      def __str__(self):
          return '%s' % (self.name)
+
+class NewsletterMessage(models.Model):
+    subject = models.CharField(max_length=200, null=False, blank=False,)
+    message = models.TextField()
+    email_count =  models.IntegerField(max_length=200, null=False, blank=False,)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return '%s' % (self.subject)

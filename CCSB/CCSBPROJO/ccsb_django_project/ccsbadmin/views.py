@@ -1,25 +1,42 @@
 import json
 from datetime import date
-
 from django.contrib import messages
-
 from django.contrib.auth import authenticate, logout, login, get_user_model
-from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import *
-from django.contrib.auth import login as auth_login
+from django.core.mail import EmailMultiAlternatives, send_mail, send_mass_mail
+from ccsb_django_project import settings
+from ccsbadmin.models import *
+from django.core import mail
+
+# from django.contrib.auth import login as auth_login
+# from django.http import HttpResponseRedirect
+# from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+# from django.db.models import Q
+# import smtplib
+# from email.mime.multipart import MIMEMultipart
+# from email.mime.text import MIMEText
+# from django.utils.html import strip_tags
+# from django.template.loader import get_template
 
 # Create your views here.
 
+
+# Create your views here.
+@login_required()
 def dashboard(request):
     experts_count = Expert.objects.all().count()
     today = date.today()
-
+    comments = Comment.objects.order_by("-created_at")
     events_count =Event.objects.filter(event_date__gt=today).count()
-    print(events_count, events_count)
+    events = Event.objects.order_by("-event_date__date").order_by("-event_date__month")
+    upcoming_event = Event.objects.filter(event_date__gte=today).first()
     project_count = Project.objects.all().count()
     comment_count = Comment.objects.all().count()
+    get_intouch = GetInTouch.objects.all()
+    emails = Newsletter.objects.all()
     user =request.user
     context ={
         'title':'Dashboard',
@@ -28,6 +45,12 @@ def dashboard(request):
         'events_count':events_count ,
         'project_count':project_count,
         'comment_count':comment_count,
+        'events':events,
+        'upcoming_event':upcoming_event,
+        'get_intouch':get_intouch,
+        'emails':emails,
+        'comments':comments,
+
     }
 
     return render(request, 'aahome/index.html', context)
@@ -570,7 +593,7 @@ def singleaboutUs(request, aboutus_id):
 
 def register(request):
     if request.method == 'POST':
-        form = AdminForm(request.POST)
+        form = AdminForm(request.POST, request.FILES)
 
 
         if form.is_valid() :
@@ -593,6 +616,8 @@ def register(request):
 
 def adminlogin(request):
     messages = []
+    admins = Admin.objects.all
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -609,7 +634,7 @@ def adminlogin(request):
         else:
             messages.append('Invalid login credentials!')
             return render(request, 'register/login.html', {'errors': messages})
-    return render(request, "register/login.html")
+    return render(request, "register/login.html", {'admins':admins})
 
 
 def adminlogout(request):
@@ -617,11 +642,6 @@ def adminlogout(request):
     return redirect('CCSBADMIN:login')
 
 
-def newsLetter(request):
-    context = {
-        'title':'NewsLetter,'
-    }
-    return render(request,'newsletter/newsletter.html', context)
 
 
 def comment(request):
@@ -686,3 +706,50 @@ def singlegetintouch(request,getintouch_id):
         'getintouch': getintouch
     }
     return render(request, 'getintouch/singlegetintouch.html', context)
+
+def newsLetter(request):
+    emails = Newsletter.objects.all()
+    newslettermessages = NewsletterMessage.objects.all()
+    context = {
+        'title':'NewsLetter',
+        'emails':emails,
+        'newslettermessages':newslettermessages,
+    }
+    return render(request,'newsletter/newsletter.html', context)
+
+
+def sendEmails(request):
+    if request.method == "POST":
+        body = request.POST['message']
+        subject = request.POST['subject']
+        emails = Newsletter.objects.all()
+
+        NewsletterMessage.objects.create(
+            subject=subject,
+            message=body,
+            email_count=emails.count()
+        )
+
+        messages.success(request, 'Messages Saved')
+        for email in emails:
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [email.email,]
+            send_mail(
+                subject=subject,
+                message=body,
+                from_email=email_from,
+                recipient_list=recipient_list
+            )
+        messages.success(request, 'Emails sent')
+        return redirect('CCSBADMIN:newsLetter')
+    return redirect('CCSBADMIN:newsLetter')
+
+
+def singlenewsLetter(request, newslettermessage_id):
+    newsmessge = NewsletterMessage.objects.filter(id=newslettermessage_id).first()
+    context = {
+        'title':newsmessge.subject,
+        'newsmessge':newsmessge,
+    }
+
+    return render(request, 'newsletter/singlenewsletter.html', context)

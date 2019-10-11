@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -95,7 +95,7 @@
                             {% endif %}
                         <div class="login-logo">
                             <a href="#">
-                                <img src="../../../static/images/icon/logo.png" alt="CoolAdmin">
+                                <img src="{% static 'images/ccsb.png' %}" alt="CoolAdmin">
                             </a>
                         </div>
 
@@ -122,10 +122,12 @@
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
                             </form>
                             <div class="register-link">
+                                {% if admins.count == 0 %}
                                 <p>
                                     Don't you have account?
                                     <a href="#">Sign Up Here</a>
                                 </p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

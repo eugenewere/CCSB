@@ -20,32 +20,25 @@
 							</button>
 						</div>
 
-                            <form action="{% url 'CCSBADMIN:addCarousels' %}" method="POST" enctype="multipart/form-data">
+                            <form action="{% url 'CCSBADMIN:sendemails' %}" method="POST" enctype="multipart/form-data">
                                {% csrf_token %}
                                 <div class="modal-body">
-                                    <div class="row" style="padding: 20px; ">
-                                        <div class="form-group w-100" style=" display:flex; padding: 20px; flex-direction: column; position: relative;">
-                                            <label for="exampleInputEmail1">Home Carousel</label>
-                                            <input required id="vmimg" name="carousel_image" type="file" onchange="readURL(this);" style="position: absolute;width: 107px; top: 50%; transform: translate(-50%, -50%); left: 50%; z-index: 33;" />
-                                            <img style="border-radius: 20px; width: 100%; height: 381px; position: relative" class="blah" id="blah" src="{% static 'images/images.png' %}" alt="your image" />
-                                            <small id="emailHelp" class="form-text text-muted">Image Preferably .jpeg, .png, .jpeg</small>
-                                        </div>
-                                    </div>
+
                                     <div class="row" style="padding: 20px; ">
                                         <div class="form-group w-100">
-                                            <label for="exampleInputEmail1">Title</label>
-                                            <input type="text" name="carousel_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
-                                            <small id="emailHelp" class="form-text text-muted">A short titlr</small>
+                                            <label for="exampleInputEmail1">Subject</label>
+                                            <input type="text" name="subject" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
+                                            <small id="emailHelp" class="form-text text-muted">A short subject preferably capital letters</small>
                                         </div>
                                     </div>
                                     <div class="row" style="padding: 20px; ">
                                         <div class="form-group w-100" style="padding: 12px">
-                                          <label for="comment">Carousel Description</label>
-                                          <textarea id="comment" name="carousel_description" class="form-control" rows="5" cols="10" ></textarea>
-                                          <small id="comment" class="form-text text-muted">A short carousel Desctiption</small>
-                                          <script>
-                                               CKEDITOR.replace('comment');
-                                          </script>
+                                          <label for="comment">Message</label>
+                                          <textarea id="comment" name="message" class="form-control" rows="20" cols="10" ></textarea>
+                                          <small id="comment" class="form-text text-muted">A message you want to convey</small>
+{#                                          <script>#}
+{#                                               CKEDITOR.replace('comment');#}
+{#                                          </script>#}
                                         </div>
                                     </div>
 
@@ -59,88 +52,88 @@
 				</div>
 			</div>
 			<!-- end modal large -->
-
-             {% for carousel in carousels %}
-                <!-- updating carousel modal large -->
-                <div class="modal fade" id="ee{{ carousel.id }}" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg " role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="largeModalLabel">Update Home Carousel</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                                <form action="{% url 'CCSBADMIN:editCarousels' carousel.id %}" method="POST" enctype="multipart/form-data">
-                                   {% csrf_token %}
-                                    <div class="modal-body">
-                                        <div class="row" style="padding: 20px; ">
-                                            <div class="form-group w-100" style=" display:flex; padding: 20px; flex-direction: column; position: relative;">
-                                                <label for="exampleInputEmail1">Home Carousel</label>
-                                                <input value="{{ carousel.carousel_image }}"  id="vmimg" name="carousel_image" type="file" onchange="readURL(this);" style="position: absolute;width: 107px; top: 50%; transform: translate(-50%, -50%); left: 50%; z-index: 33;" />
-                                                <img style="border-radius: 20px; width: 100%; height: 381px; position: relative" class="blah" id="blah" src="{{ carousel.carousel_image.url }}" alt="your image" />
-                                                <small id="emailHelp" class="form-text text-muted">Image Preferably .jpeg, .png, .jpeg</small>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding: 20px; ">
-                                            <div class="form-group w-100">
-                                                <label for="exampleInputEmail1">Title</label>
-                                                <input value="{{ carousel.carousel_title }}" type="text" name="carousel_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
-                                                <small id="emailHelp" class="form-text text-muted">A short title</small>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="padding: 20px; ">
-                                            <div class="form-group w-100" style="padding: 12px">
-                                              <label for="comment">Carousel Description</label>
-                                              <textarea id="comment{{ carousel.id }}" name="carousel_description" class="form-control" rows="5" cols="10" >
-                                                  {{ carousel.carousel_description }}
-                                              </textarea>
-                                              <small id="comment{{ carousel.id }}" class="form-text text-muted">A short carousel Desctiption</small>
-                                              <script>
-                                                   CKEDITOR.replace('comment{{ carousel.id }}');
-                                              </script>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Confirm</button>
-                                    </div>
-                                </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- end modal large -->
-             {% endfor %}
-
-
-
-
-            {% for carousel in carousels %}
-            <!-- delete carousel modal large -->
-			<div class="modal fade" id="dd{{ carousel.id }}" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="largeModalLabel">Delete carousel {{ carousel.carousel_title }}</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-                        <div class="modal-body">
-                            Are you sure you want to delete the carousel! {{ carousel.carousel_title }}
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>
-                            <a href="{% url 'CCSBADMIN:deleteCarousels' carousel.id %}" class="btn btn-danger"><i class="fa fa-plus"></i> Delete</a>
-                        </div>
-					</div>
-				</div>
-			</div>
-			<!-- end modal large -->
-            {% endfor %}
+{##}
+{#             {% for carousel in carousels %}#}
+{#                <!-- updating carousel modal large -->#}
+{#                <div class="modal fade" id="ee{{ carousel.id }}" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">#}
+{#                    <div class="modal-dialog modal-lg " role="document">#}
+{#                        <div class="modal-content">#}
+{#                            <div class="modal-header">#}
+{#                                <h5 class="modal-title" id="largeModalLabel">Update Home Carousel</h5>#}
+{#                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                                    <span aria-hidden="true">&times;</span>#}
+{#                                </button>#}
+{#                            </div>#}
+{##}
+{#                                <form action="{% url 'CCSBADMIN:editCarousels' carousel.id %}" method="POST" enctype="multipart/form-data">#}
+{#                                   {% csrf_token %}#}
+{#                                    <div class="modal-body">#}
+{#                                        <div class="row" style="padding: 20px; ">#}
+{#                                            <div class="form-group w-100" style=" display:flex; padding: 20px; flex-direction: column; position: relative;">#}
+{#                                                <label for="exampleInputEmail1">Home Carousel</label>#}
+{#                                                <input value="{{ carousel.carousel_image }}"  id="vmimg" name="carousel_image" type="file" onchange="readURL(this);" style="position: absolute;width: 107px; top: 50%; transform: translate(-50%, -50%); left: 50%; z-index: 33;" />#}
+{#                                                <img style="border-radius: 20px; width: 100%; height: 381px; position: relative" class="blah" id="blah" src="{{ carousel.carousel_image.url }}" alt="your image" />#}
+{#                                                <small id="emailHelp" class="form-text text-muted">Image Preferably .jpeg, .png, .jpeg</small>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="row" style="padding: 20px; ">#}
+{#                                            <div class="form-group w-100">#}
+{#                                                <label for="exampleInputEmail1">Title</label>#}
+{#                                                <input value="{{ carousel.carousel_title }}" type="text" name="carousel_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">#}
+{#                                                <small id="emailHelp" class="form-text text-muted">A short title</small>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="row" style="padding: 20px; ">#}
+{#                                            <div class="form-group w-100" style="padding: 12px">#}
+{#                                              <label for="comment">Carousel Description</label>#}
+{#                                              <textarea id="comment{{ carousel.id }}" name="carousel_description" class="form-control" rows="5" cols="10" >#}
+{#                                                  {{ carousel.carousel_description }}#}
+{#                                              </textarea>#}
+{#                                              <small id="comment{{ carousel.id }}" class="form-text text-muted">A short carousel Desctiption</small>#}
+{#                                              <script>#}
+{#                                                   CKEDITOR.replace('comment{{ carousel.id }}');#}
+{#                                              </script>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                    </div>#}
+{#                                    <div class="modal-footer">#}
+{#                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>#}
+{#                                        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Confirm</button>#}
+{#                                    </div>#}
+{#                                </form>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- end modal large -->#}
+{#             {% endfor %}#}
+{##}
+{##}
+{##}
+{##}
+{#            {% for carousel in carousels %}#}
+{#            <!-- delete carousel modal large -->#}
+{#			<div class="modal fade" id="dd{{ carousel.id }}" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">#}
+{#				<div class="modal-dialog modal-lg" role="document">#}
+{#					<div class="modal-content">#}
+{#						<div class="modal-header">#}
+{#							<h5 class="modal-title" id="largeModalLabel">Delete carousel {{ carousel.carousel_title }}</h5>#}
+{#							<button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#								<span aria-hidden="true">&times;</span>#}
+{#							</button>#}
+{#						</div>#}
+{#                        <div class="modal-body">#}
+{#                            Are you sure you want to delete the carousel! {{ carousel.carousel_title }}#}
+{#                        </div>#}
+{#                        <div class="modal-footer">#}
+{#                            <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-trash"></i> Cancel</button>#}
+{#                            <a href="{% url 'CCSBADMIN:deleteCarousels' carousel.id %}" class="btn btn-danger"><i class="fa fa-plus"></i> Delete</a>#}
+{#                        </div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#			<!-- end modal large -->#}
+{#            {% endfor %}#}
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
@@ -153,172 +146,79 @@
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-right">
                                         <button data-toggle="modal" data-target="#largeModal" class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus" ></i>add emails
+                                            <i class="zmdi zmdi-plus" ></i>Send Newsletter
                                         </button>
                                     </div>
                                 </div>
-                                <div class="table-responsive table-responsive-data2">
-                                    <table class="table tablez table-data2">
+                                <div class="table-responsive table-responsive-data2  d-flex">
+                                    <table class="col-md-8 table table2 table-data2">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <th>name</th>
-                                                <th>email</th>
-                                                <th>description</th>
-                                                <th>date</th>
-                                                <th>status</th>
-                                                <th>price</th>
-                                                <th></th>
+                                                <th>#</th>
+                                                <th>Subject</th>
+                                                <th>Recipients</th>
+                                                <th>date created</th>
+                                                <th>setting</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>
-                                                    <span class="block-email">lori@example.com</span>
-                                                </td>
-                                                <td class="desc">Samsung S8 Black</td>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>$679.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>
-                                                    <span class="block-email">john@example.com</span>
-                                                </td>
-                                                <td class="desc">iPhone X 64Gb Grey</td>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>$999.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>
-                                                    <span class="block-email">lyn@example.com</span>
-                                                </td>
-                                                <td class="desc">iPhone X 256Gb Black</td>
-                                                <td>2018-09-25 19:03</td>
-                                                <td>
-                                                    <span class="status--denied">Denied</span>
-                                                </td>
-                                                <td>$1199.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>
-                                                    <span class="block-email">doe@example.com</span>
-                                                </td>
-                                                <td class="desc">Camera C430W 4k</td>
-                                                <td>2018-09-24 19:10</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>$699.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            {% for message in newslettermessages %}
+                                                <tr class="tr-shadow">
+                                                    <td>{{ forloop.counter }}</td>
+                                                    <td>{{message.subject}}</td>
+                                                    <td>{{message.email_count}}</td>
+                                                    <td class="desc">{{message.created_at|date:"d m Y"}}</td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                            <a href="{% url 'CCSBADMIN:singlenewsLetter' message.id %}" class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                <i class="zmdi zmdi-eye"></i>
+                                                            </a>
+{#                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">#}
+{#                                                                <i class="zmdi zmdi-edit"></i>#}
+{#                                                            </button>#}
+{#                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">#}
+{#                                                                <i class="zmdi zmdi-delete"></i>#}
+{#                                                            </button>#}
+{#                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">#}
+{#                                                                <i class="zmdi zmdi-more"></i>#}
+{#                                                            </button>#}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="spacer"></tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
+                                    <div class="col-md-4">
+                                    <h2 class="title-1 m-b-25">List Of Recipients</h2>
+                                    <div style="max-height: 400px; overflow-y: auto;" class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-white">#</th>
+                                                        <th class="text-white">Email</th>
+                                                        <th class="text-white">Date Subscribed</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for email in emails %}
+                                                    <tr>
+                                                        <td>{{ forloop.counter }}</td>
+                                                        <td class="">{{email.email}}</td>
+                                                        <td class="text-right">{{email.created_at|date:"d:M:Y"}}</td>
+                                                    </tr>
+                                                {% endfor %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                                </div>
+
                                 <!-- END DATA TABLE -->
                             </div>
                         </div>
@@ -357,7 +257,7 @@
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function(){
-          $('.tablez').DataTable(
+          $('.table2').DataTable(
                {#{#}
                {# "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {#}
                {#         $('td', nRow).css('background-color', '#323a46');#}

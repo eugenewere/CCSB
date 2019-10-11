@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="animsition">{% comment %}animsition{% endcomment %}
+<body class="animsition" style="zoom:90%;">{% comment %}animsition{% endcomment %}
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -47,7 +47,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="../../../static/images/icon/logo.png" alt="CoolAdmin" />
+                            <img style="width: 189px;" src="{% static 'images/ccsb.png' %}" alt="CCSBADMIN" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -104,9 +104,9 @@
                                 <li>
                                     <a href="{% url 'CCSBADMIN:viewContact' %}">Contacts</a>
                                 </li>
-                                <li>
-                                    <a href="badge.html">Social Media</a>
-                                </li>
+{#                                <li>#}
+{#                                    <a href="badge.html">Social Media</a>#}
+{#                                </li>#}
                                 <li>
                                     <a href="{% url 'CCSBADMIN:aboutUs' %}">About Us</a>
                                 </li>
@@ -123,7 +123,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="../../../static/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="{% static 'images/ccsb.png' %}" alt="CCSBADMIN" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -190,9 +190,7 @@
                                 <li>
                                     <a href="{% url 'CCSBADMIN:viewContact' %}">Contacts</a>
                                 </li>
-                                <li>
-                                    <a href="badge.html">Social Media</a>
-                                </li>
+
                                 <li>
                                     <a href="{% url 'CCSBADMIN:aboutUs' %}">About Us</a>
                                 </li>
@@ -213,10 +211,10 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
+{#                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />#}
+{#                                <button class="au-btn--submit" type="submit">#}
+{#                                    <i class="zmdi zmdi-search"></i>#}
+{#                                </button>#}
                             </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
@@ -293,6 +291,13 @@
                                             <div class="content">
                                                 <a class="js-acc-btn" href="#">{{ request.user.first_name}} {{ request.user.last_name}}</a>
                                             </div>
+                                    {% else %}
+                                        <div class="image">
+                                            <img src="{% static 'images/coolavatar.jpg' %}" alt="nobody" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Username</a>
+                                        </div>
                                     {% endif %}
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -311,24 +316,34 @@
                                                 {% endif %}
                                             </div>
                                             <div class="account-dropdown__body">
+                                                 {% if request.user.is_authenticated %}
                                                 <div class="account-dropdown__item">
+
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                        <i class="zmdi zmdi-account"></i>Account
+                                                    </a>
                                                 </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="{% url 'CCSBADMIN:login' %}">
-                                                        <i class="zmdi zmdi-settings"></i>Login</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="{% url 'CCSBADMIN:register' %}">
-                                                        <i class="zmdi zmdi-money-box"></i>Register</a>
-                                                </div>
+                                                {% endif %}
+                                                 {% if not request.user.is_authenticated %}
+                                                        <div class="account-dropdown__item">
+                                                            <a href="{% url 'CCSBADMIN:login' %}">
+                                                                <i class="zmdi zmdi-settings"></i>Login</a>
+                                                        </div>
+                                                     {% if request.user.count > 0 %}
+                                                        <div class="account-dropdown__item">
+                                                            <a href="{% url 'CCSBADMIN:register' %}">
+                                                                <i class="zmdi zmdi-money-box"></i>Register</a>
+                                                        </div>
+                                                     {% endif %}
+                                                {% endif %}
 
                                             </div>
+                                         {% if request.user.is_authenticated %}
                                             <div class="account-dropdown__footer">
                                                 <a href="{% url 'CCSBADMIN:logout' %}">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
+                                        {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -336,6 +351,7 @@
                         </div>
                     </div>
                 </div>
+
 
 
 
@@ -399,6 +415,7 @@
     <script src="{% static 'vendor/chartjs/Chart.bundle.min.js' %}"></script>
     <script src="{% static 'vendor/select2/select2.min.css' %}">
     </script>
+
 
     <!-- Main JS-->
     <script src="{% static 'js/main.js' %}"></script>

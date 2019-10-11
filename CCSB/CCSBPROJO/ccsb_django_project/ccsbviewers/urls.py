@@ -17,4 +17,5 @@ urlpatterns = [
     path('addblogComment/', views.addblogComment, name='addblogComment'),
     path('addNewsLetter/', views.addNewsLetter, name='addNewsLetter'),
 
+
 ]
