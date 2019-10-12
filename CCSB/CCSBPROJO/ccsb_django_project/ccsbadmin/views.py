@@ -1,8 +1,9 @@
 import json
 from datetime import date
 from django.contrib import messages
-from django.contrib.auth import authenticate, logout, login, get_user_model
+from django.contrib.auth import authenticate, logout, login, get_user_model, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import *
@@ -330,13 +331,11 @@ def homeCalendar(request):
 def addCalendarEvent(request):
     if request.method == 'POST':
         event_date = request.POST['event_date']
-
         event_title = request.POST['events_title']
         event_end_date = request.POST['event_end_date']
         event_description = request.POST['events_description']
         evnt = Event.objects.create(
             event_date=event_date,
-
             events_title=event_title,
             event_end_date=event_end_date,
             events_description=event_description,
@@ -371,12 +370,14 @@ def editEvents(request, event_id):
     event = Event.objects.filter(id=event_id).first()
     if request.method == 'POST':
         event_date=request.POST['event_date']
+        event_image = request.FILES.get('events_image')
         event_title=request.POST['events_title']
         event_end_date=request.POST['event_end_date']
         event_description=request.POST['events_description']
 
         Event.objects.filter(id=event.id).update(
             event_date=event_date,
+            events_image=event_image,
             event_end_date=event_end_date,
             events_title=event_title,
             events_description=event_description,
@@ -448,7 +449,7 @@ def editProjects(request, project_id):
     project = Project.objects.filter(id=project_id).first()
     if request.method == 'POST':
         date = request.POST['date']
-        project_image = request.FILES['project_image']
+        project_image = request.FILES.get('project_image')
         project_title = request.POST['project_title']
         project_description = request.POST['project_description']
         Project.objects.filter(id=int(project.id)).create(
@@ -493,7 +494,7 @@ def viewContact(request):
 def addContact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        
+
         if form.is_valid():
             #
             form.save()
@@ -597,9 +598,9 @@ def register(request):
 
 
         if form.is_valid() :
-            user = form.save(commit=False)
-            user.profile_pic = request.FILES.get('profile_pic')
-            user.save()
+            # user = form.save(commit=False)
+            # user.profile_pic = request.FILES.get('profile_pic')
+            form.save()
             messages.success(request, 'Registered Successfully Now Log In')
             return redirect('CCSBADMIN:login')
         else:
@@ -616,7 +617,7 @@ def register(request):
 
 def adminlogin(request):
     messages = []
-    admins = Admin.objects.all
+    admins = Admin.objects.all()
 
     if request.method == 'POST':
         username = request.POST['username']
@@ -753,3 +754,79 @@ def singlenewsLetter(request, newslettermessage_id):
     }
 
     return render(request, 'newsletter/singlenewsletter.html', context)
+
+
+def account(request):
+    user_id=request.user.id
+    admin = Admin.objects.filter(user_ptr_id=user_id).first()
+
+    context = {
+        'title': "user account",
+        'admin': admin,
+    }
+    return render(request, 'account/account.html', context)
+
+
+def updateaccount(request):
+    user_id = request.user.id
+    admin = Admin.objects.filter(user_ptr_id=user_id).first()
+    if request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+        # image= request.FILES.get('image', None)
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        phone_number = request.POST['phone_no']
+        if admin is not None:
+            Admin.objects.filter(user_ptr_id=admin.id).update(
+                # profile_pic=image,
+                phone_no=phone_number,
+            )
+            User.objects.filter(pk = request.user.id).update(
+                username=username,
+                first_name=first_name,
+                last_name=last_name,
+                email=email,
+            )
+
+            messages.success(request, 'Updated Successfully')
+        return redirect('CCSBADMIN:account')
+    return redirect('CCSBADMIN:account')
+
+
+def updateaccountprofilepic(request):
+    user_id = request.user.id
+    admin = Admin.objects.filter(user_ptr_id=user_id).first()
+    if request.method == "POST":
+        image = request.FILES['profile_pic']
+        form = AdminForm(request.POST, request.FILES, instance=admin)
+        if form.is_valid():
+            form.save(commit=False)
+            form.profile_pic = image
+            form.save()
+            messages.success(request, 'Updated Successfully')
+            return redirect("CCSBADMIN:updateaccountprofilepic")
+
+    context = {
+        'title': "user account",
+        'admin': admin,
+    }
+    return render(request, 'account/editpicture.html',context)
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('CCSBADMIN:account')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+
+    return render(request, 'account/editpassword.html', {
+        'form': form
+    })

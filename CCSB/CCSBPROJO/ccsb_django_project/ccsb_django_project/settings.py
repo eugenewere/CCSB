@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # 'tinymce',
     'ccsbadmin.apps.CcsbadminConfig',
     'ccsbviewers.apps.CcsbviewersConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -148,3 +149,4 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL: False
 
 
+CRISPY_TEMPLATE_PACK ='bootstrap4'

@@ -286,7 +286,9 @@
                                     <div class="account-item clearfix js-item-menu">
                                     {% if request.user.is_authenticated %}
                                             <div class="image">
-                                                <img src="{{request.user}}" alt="{{ request.user.first_name}} {{ request.user.last_name}}" />
+                                                {% if request|admin %}
+                                                      <img class="rounded-circle" src="{{request|admin }}" alt="{{ request.user.first_name}} {{ request.user.last_name}}" />
+                                                {% endif %}
                                             </div>
                                             <div class="content">
                                                 <a class="js-acc-btn" href="#">{{ request.user.first_name}} {{ request.user.last_name}}</a>
@@ -303,13 +305,19 @@
                                             <div class="info clearfix">
                                                 {% if request.user.is_authenticated %}
                                                     <div class="image">
+                                                    {% if request|admin %}
                                                         <a href="#">
-                                                            <img src="{{ request.user }}" alt="{{ request.user.first_name}} {{ request.user.last_name}}" />
+                                                              <img class="rounded-circle" src="{{ request|admin }}" alt="{{ request.user.first_name}} {{ request.user.last_name}}" />
                                                         </a>
+                                                        {% else %}
+                                                        <a href="#">
+                                                              <img class="rounded-circle" src="{% static 'images/coolavatar.jpg' %}" alt="{{ request.user.first_name}} {{ request.user.last_name}}" />
+                                                        </a>
+                                                    {% endif %}
                                                     </div>
                                                     <div class="content">
                                                         <h5 class="name">
-                                                            <a href="#">{{ request.user.first_name}} {{ request.user.last_name}}</a>
+                                                            <a href="#">{{ request.user.first_name }} {{ request.user.last_name}}</a>
                                                         </h5>
                                                         <span class="email">{{ request.user.email}}</span>
                                                     </div>
@@ -319,7 +327,7 @@
                                                  {% if request.user.is_authenticated %}
                                                 <div class="account-dropdown__item">
 
-                                                    <a href="#">
+                                                    <a href="{% url "CCSBADMIN:account"  %}">
                                                         <i class="zmdi zmdi-account"></i>Account
                                                     </a>
                                                 </div>

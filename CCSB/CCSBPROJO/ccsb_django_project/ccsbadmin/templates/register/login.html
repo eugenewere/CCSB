@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="animsition">
+<body class="animsition" style="overflow-y: auto">
     <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
@@ -104,8 +104,8 @@
                             <form action="{% url 'CCSBADMIN:login' %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <label>UserName</label>
-                                    <input class="au-input au-input--full" type="text" name="username" placeholder="UserName">
+                                    <label for="username">UserName</label>
+                                    <input id="username" class="au-input au-input--full" type="text" name="username" placeholder="UserName">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
@@ -116,7 +116,7 @@
                                         <input type="checkbox" name="remember">Remember Me
                                     </label>
                                     <label>
-                                        <a href="#">Forgotten Password?</a>
+                                        <a href="{% url 'CCSBADMIN:password_reset' %}">Forgotten Password?</a>
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
@@ -125,7 +125,7 @@
                                 {% if admins.count == 0 %}
                                 <p>
                                     Don't you have account?
-                                    <a href="#">Sign Up Here</a>
+                                    <a href="{% url 'CCSBADMIN:register' %}">Sign Up Here</a>
                                 </p>
                                 {% endif %}
                             </div>
